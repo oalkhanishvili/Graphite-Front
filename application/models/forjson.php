@@ -13,8 +13,8 @@ class forjson extends CI_Model
         foreach($querry->result_array() as $row)
         {
             $result[$x]=$row;
-            $result[$x]['pic_url']='http://176.28.22.210/peaceofart/assets/img/'.$row['pic_name'];
-            $result[$x]['profimg_url']='http://176.28.22.210/peaceofart/assets/user_img/'.$row['prof_img'];
+            $result[$x]['pic_url']=base_url('assets/img/'.$row['pic_name']);
+            $result[$x]['profimg_url']=base_url('assets/user_img/'.$row['prof_img']);
             $x++;
         }
         return json_encode($result);
