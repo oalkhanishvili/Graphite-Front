@@ -1,0 +1,981 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"con",
+				"config"
+			],
+			[
+				"manager",
+				"manager_model"
+			],
+			[
+				"new",
+				"newname"
+			],
+			[
+				"navi",
+				"$navigation_show〔variable〕"
+			],
+			[
+				"mimia",
+				"mimartuleba_id"
+			],
+			[
+				"all_",
+				"all_mimartuleba"
+			],
+			[
+				"im",
+				"implode"
+			],
+			[
+				"imp",
+				"implode〔function〕"
+			],
+			[
+				"endfor",
+				"endforeach〔keyword〕"
+			],
+			[
+				"teach",
+				"teacher_id"
+			],
+			[
+				"mimartu",
+				"$mimartulebas〔variable〕"
+			],
+			[
+				"inle",
+				"inline-block"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"prin",
+				"print_r〔function〕"
+			],
+			[
+				"qu",
+				"query"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"question",
+				"question_id"
+			],
+			[
+				"confi",
+				"confirm_query〔function〕"
+			],
+			[
+				"session_un",
+				"session_unset"
+			],
+			[
+				"_Se",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"resu",
+				"$result1〔variable〕"
+			],
+			[
+				"_se",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"_s",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"reg",
+				"$registration〔variable〕"
+			],
+			[
+				"user",
+				"$username〔variable〕"
+			],
+			[
+				"_",
+				"_username"
+			],
+			[
+				"cur",
+				"current_subject"
+			],
+			[
+				"curr",
+				"$current_page〔variable〕"
+			],
+			[
+				"mysqli_fe",
+				"mysqli_fetch_assoc〔function〕"
+			],
+			[
+				"cu",
+				"$current_subject〔variable〕"
+			],
+			[
+				"curren",
+				"$current_subject〔variable〕"
+			],
+			[
+				"_SE",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"subje",
+				"$subject_set〔variable〕"
+			],
+			[
+				"mysqli_num",
+				"mysqli_num_rows〔function〕"
+			],
+			[
+				"curre",
+				"$current_subject〔variable〕"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"to",
+				"toggleClass"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"BA",
+				"background-color"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"vis",
+				"visibility"
+			],
+			[
+				"backg",
+				"background-image"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"list-s",
+				"list-style-type"
+			],
+			[
+				"so",
+				"solid"
+			],
+			[
+				"backgorun",
+				"background-color"
+			],
+			[
+				"mari",
+				"margin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config/config.php",
+			"settings":
+			{
+				"buffer_size": 17508,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n\nclass map extends CI_Controller{\n	public function __construct(){\n		parent::__construct();\n		$this->load->library('googlemaps');\n\n		$config['center'] = '41.699833, 44.803448';\n		$config['zoom'] = 'auto';\n		$config['zoom'] = 'auto';\n		$config['disableMapTypeControl'] = TRUE;\n		$this->googlemaps->initialize($config);\n\n	}\n	public function index(){\n\n		$this->load->model('show_markers');\n		$list = $this->show_markers->select_markers();\n\n		foreach ( $list as $items ){\n			$marker = array();\n			$marker['position'] = $items['latitude'].','.$items['longitude'];\n			$html  = \"<div class='marker'><h2>{$items['title']}</h1>\";\n			$html .= \"<p><img src=\".base_url('img/'.$items['pic_name']).\" height=150px></p>\";\n			$html .= \"<p>{$items['description']}</p></div>\";\n			$html .= \"<p><a href=\".site_url('map/detail_page/'.$items['id']).\">დეტალური გვერდი</a></p></div>\";\n			$marker['infowindow_content'] = $html;\n			if ( $items['category_id'] == 2 ){\n			$marker['icon'] = base_url('img/marker.png');\n			}\n			$marker['animation'] = 'DROP';\n			$marker['draggable'] = FALSE;\n			$this->googlemaps->add_marker($marker);\n		}\n\n		$data['map'] = $this->googlemaps->create_map();\n\n		$this->load->view('view_home', $data);\n\n	}\n	public function detail_page($id){\n		$this->load->model('show_markers');\n		$result = $this->show_markers->detail_page($id);\n\n		$data['detail_page'] = $result;\n		$data['map'] = $this->googlemaps->create_map();\n		$this->load->view('detail_page', $data);\n	}\n	public function insert_mark(){\n\n		if ( $_SERVER['REQUEST_METHOD'] == 'POST' ){\n		$data = array(\n			'user_id' => $this->input->post('user_id'),\n			'category_id' => $this->input->post('category_id'),\n			'pic_name' => $this->input->post('pic_name'),\n			'title' => $this->input->post('title'),\n			'longitude' => $this->input->post('longitude'),\n			'latitude' => $this->input->post('latitude'),\n			);\n		$this->load->model('show_markers');\n		$this->show_markers->insert_markers($data);\n		}\n		$data['map'] = $this->googlemaps->create_map();\n		$this->load->view('insert_marker', $data);\n	}\n}",
+			"file": "controllers/map.php",
+			"file_size": 2178,
+			"file_write_time": 130814421720983253,
+			"settings":
+			{
+				"buffer_size": 2113,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/detail_page.php",
+			"settings":
+			{
+				"buffer_size": 478,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "libraries/Googlemaps.php",
+			"settings":
+			{
+				"buffer_size": 90372,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/show_markers.php",
+			"settings":
+			{
+				"buffer_size": 674,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/autoload.php",
+			"settings":
+			{
+				"buffer_size": 3788,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/view_home.php",
+			"settings":
+			{
+				"buffer_size": 294,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 196.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ftp",
+				"FTPSync: Upload current file"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"SFTP: Delete Server…"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"emmet",
+				"Emmet: Merge Lines"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"paca",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/xampp/htdocs/Graphite-Front/application",
+		"/D/xampp/htdocs/Graphite-Front/application/config",
+		"/D/xampp/htdocs/Graphite-Front/application/controllers",
+		"/D/xampp/htdocs/Graphite-Front/application/libraries",
+		"/D/xampp/htdocs/Graphite-Front/application/models",
+		"/D/xampp/htdocs/Graphite-Front/application/views"
+	],
+	"file_history":
+	[
+		"/D/xampp/htdocs/code/application/views/single_news.php",
+		"/D/xampp/htdocs/peaceofart/application/.htaccess",
+		"/D/xampp/htdocs/amanatebi/application/third_party/index.html",
+		"/D/xampp/htdocs/amanatebi/application/libraries/excel_reader.php",
+		"/D/xampp/htdocs/amanatebi/application/libraries/export.php",
+		"/D/xampp/htdocs/amanatebi/application/controllers/Pages.php",
+		"/D/xampp/htdocs/amanatebi/application/views/manager/index.php",
+		"/D/xampp/htdocs/amanatebi/application/views/manager/top-menu.php",
+		"/D/xampp/htdocs/amanatebi/startbootstrap-sb-admin-1.0.3/forms.html",
+		"/D/xampp/htdocs/amanatebi/application/views/manager/amanati-table.php",
+		"/D/xampp/htdocs/amanatebi/css/bootstrap.css",
+		"/D/xampp/htdocs/amanatebi/css/plugins/morris.css",
+		"/D/xampp/htdocs/amanatebi/css/bootstrap-rtl.min.css",
+		"/D/xampp/htdocs/amanatebi/css/sb-admin.css",
+		"/D/xampp/htdocs/amanatebi/font-awesome/fonts/fontawesome-webfont.svg",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/header.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/section-useredit.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/user-registration.php",
+		"/D/xampp/htdocs/amanatebi/application/models/login_model.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/reisebi.php",
+		"/D/xampp/htdocs/amanatebi/application/models/page_model.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/section.php",
+		"/D/xampp/htdocs/amanatebi/js/my_script.js",
+		"/D/xampp/htdocs/amanatebi/random-login-form/index.html",
+		"/D/xampp/htdocs/amanatebi/login/index.html",
+		"/D/xampp/htdocs/amanatebi/application/views/manager/login-form.php",
+		"/D/xampp/htdocs/amanatebi/application/views/manager/footer.php",
+		"/D/xampp/htdocs/amanatebi/application/views/manager/side-navigation.php",
+		"/D/xampp/htdocs/amanatebi/login/css/style.css",
+		"/D/xampp/htdocs/test/index.php",
+		"/D/xampp/htdocs/amanatebi/css/img/currency.wsdl",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/footer.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/section_navigation.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/navigation.php",
+		"/D/xampp/htdocs/amanatebi/application/controllers/manager.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/user-login.php",
+		"/D/xampp/htdocs/geolab/fonts/fonts.css",
+		"/D/xampp/htdocs/amanatebi/startbootstrap-sb-admin-1.0.3/blank-page.html",
+		"/D/xampp/htdocs/amanatebi/startbootstrap-sb-admin-1.0.3/index-rtl.html",
+		"/D/xampp/htdocs/amanatebi/application/controllers/hello.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/section_page.php",
+		"/D/xampp/htdocs/amanatebi/application/views/pages/user-panel.php",
+		"/D/xampp/htdocs/amanatebi/application/config/config.php",
+		"/D/xampp/htdocs/amanatebi/application/config/routes.php",
+		"/D/xampp/htdocs/amanatebi/application/controllers/News.php",
+		"/D/xampp/htdocs/amanatebi/.htaccess",
+		"/D/xampp/htdocs/amanatebi/index.php",
+		"/D/xampp/htdocs/amanatebi/application/.htaccess",
+		"/D/xampp/htdocs/amanatebi/application/index.html",
+		"/D/xampp/htdocs/amanatebi/images/yuan.svg",
+		"/D/xampp/htdocs/amanatebi/images/lari.svg",
+		"/C/Users/dalkh_000/AppData/Local/Temp/Rar$DIa0.202/style.css",
+		"/D/xampp/htdocs/amanatebi/application/views/user-success.php",
+		"/D/xampp/htdocs/amanatebi/application/config/constants.php",
+		"/D/xampp/htdocs/amanatebi/application/models/page_model",
+		"/D/xampp/htdocs/geolab/layout/head.php",
+		"/D/xampp/htdocs/code/.htaccess",
+		"/D/xampp/htdocs/amanatebi/application/controllers/User.php",
+		"/D/xampp/htdocs/code/application/views/search_result.php",
+		"/D/xampp/htdocs/code/application/config/autoload.php",
+		"/D/xampp/htdocs/code/application/config/config.php",
+		"/D/xampp/htdocs/code/application/views/pages/home.php",
+		"/D/xampp/htdocs/code/application/third_party/index.html",
+		"/D/xampp/htdocs/code/application/views/list.php",
+		"/D/xampp/htdocs/code/application/controllers/Welcome.php",
+		"/D/xampp/htdocs/code/application/controllers/User.php",
+		"/D/xampp/htdocs/code/application/controllers/Pages.php",
+		"/D/xampp/htdocs/geolab/fonts/font-awesome.min.css",
+		"/D/xampp/htdocs/amanatebi/css/style.css",
+		"/D/xampp/htdocs/code/application/config/database.php",
+		"/D/xampp/htdocs/code/application/controllers/News.php",
+		"/D/xampp/htdocs/geolab/android/json.php",
+		"/D/xampp/htdocs/amanatebi/js/bootstrap-3.3.5-dist/css/bootstrap-theme.css",
+		"/D/xampp/htdocs/amanatebi/js/bootstrap-3.3.5-dist/css/bootstrap.css",
+		"/G/prof/lecturer.php",
+		"/D/xampp/htdocs/amanatebi/application/config/autoload.php",
+		"/D/xampp/htdocs/amanatebi/application/models/index.html",
+		"/D/xampp/htdocs/amanatebi/application/models/User_mode.php",
+		"/D/xampp/htdocs/amanatebi/application/controllers/Welcome.php",
+		"/D/xampp/htdocs/amanatebi/application/config/database.php",
+		"/D/xampp/htdocs/code/application/views/add_news.php",
+		"/D/xampp/htdocs/amanatebi/application/views/body.php",
+		"/D/xampp/htdocs/amanatebi/css/reset.css",
+		"/D/xampp/htdocs/amanatebi/application/views/css/style.css",
+		"/D/xampp/htdocs/track1/layout/header.php",
+		"/D/xampp/htdocs/track1/index.php",
+		"/D/xampp/htdocs/track1/layout/footer.php",
+		"/D/xampp/htdocs/amanatebi/application/admin.sql",
+		"/D/xampp/htdocs/amanatebi/application/helpers/index.html",
+		"/D/xampp/htdocs/amanatebi/application/controllers/manage.php",
+		"/D/xampp/htdocs/code/application/controllers/manage.php",
+		"/D/xampp/htdocs/code/application/views/application.php",
+		"/D/xampp/htdocs/code/application/controllers/application.php",
+		"/D/xampp/htdocs/geolab/html/index.html",
+		"/D/xampp/htdocs/geolab/layout/header.php",
+		"/D/xampp/htdocs/geolab/html/new_cal/index.html",
+		"/D/xampp/htdocs/geolab/js/myscript.js",
+		"/D/xampp/htdocs/geolab/calendar/index.html",
+		"/D/xampp/htdocs/code/application/models/User_mode.php",
+		"/D/xampp/htdocs/geolab/layout/footer.php",
+		"/D/xampp/htdocs/saswavlo/dbh.php",
+		"/D/xampp/htdocs/geolab/admin/inc/dbh.php",
+		"/D/xampp/htdocs/geolab/admin/addoncal.php",
+		"/D/xampp/htdocs/geolab/admin/inc/calinsert.php",
+		"/D/xampp/htdocs/geolab/functions/calendar_date.php",
+		"/D/xampp/htdocs/saswavlo/option.class.php",
+		"/D/xampp/htdocs/saswavlo/index2.php",
+		"/D/xampp/htdocs/saswavlo/select2.php",
+		"/D/xampp/htdocs/saswavlo/question.class.php",
+		"/D/xampp/htdocs/track1/classes/class.php",
+		"/D/xampp/htdocs/track/templates/default/default.php",
+		"/D/xampp/htdocs/track/templates/default/shortstory.tpl",
+		"/D/xampp/htdocs/geolab/layout/style/style.css",
+		"/D/xampp/htdocs/geolab/include/dbh.php",
+		"/D/xampp/htdocs/geolab/index2.php",
+		"/D/xampp/htdocs/track1/db/dbh.php",
+		"/D/xampp/htdocs/geolab/index.php",
+		"/D/xampp/htdocs/track/include/classes/Accounts.class.php",
+		"/D/xampp/htdocs/track/page/handlers/handler_pages.php",
+		"/D/xampp/htdocs/test/includes/functions.php",
+		"/D/xampp/track/db/dbh.php",
+		"/D/xampp/htdocs/test/includes/classes.php",
+		"/D/xampp/htdocs/test/public/index.php",
+		"/D/xampp/htdocs/saswavlo/select.php",
+		"/D/xampp/htdocs/saswavlo/kodebi/PDOfetch.php",
+		"/D/xampp/htdocs/test/public/registration.php",
+		"/D/xampp/htdocs/test/public/stylesheets/style.css",
+		"/D/xampp/htdocs/saswavlo/option.php"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sensor",
+			"lues']['2']['A'",
+			"side-nav",
+			"navbar-brand\nnavbar-brand",
+			"navbar-brand",
+			"navbar-header",
+			">\n",
+			" \n",
+			"else",
+			"$items",
+			"$$items",
+			"$items",
+			">\n",
+			"striped",
+			"picker",
+			"css",
+			"design",
+			"h3",
+			"design",
+			"all_mimartuleba",
+			"connect",
+			"select_mimartuleba",
+			"cal-box",
+			"days",
+			"header",
+			"header p",
+			"ul",
+			"][]=$",
+			"a",
+			"$mm",
+			"values",
+			"li ",
+			"$calendar->select_mimartuleba($dbh)",
+			"li",
+			"sql_answers",
+			"global",
+			"mysqli_num_rows",
+			"exit",
+			"exit()",
+			"empty",
+			"if(empty($this->_username)){\n			echo\n		}",
+			"find_pages_for_subject",
+			"subjects",
+			"	\"",
+			"	=",
+			" \"",
+			"$result",
+			"(\"\",\"\");",
+			", ",
+			"isset",
+			"first_name",
+			" $",
+			" ?>",
+			"Document",
+			"5.5",
+			"5.55",
+			"5.6",
+			"5.4",
+			"5",
+			"5.5",
+			"5",
+			"5.7",
+			"\"",
+			"down",
+			"form",
+			"2",
+			"2s",
+			"1.6",
+			"0.2",
+			"inline",
+			"{\n",
+			"id",
+			"header",
+			"target",
+			"articles",
+			"UsereID",
+			"data",
+			"row",
+			"bindValue",
+			"prepare",
+			"momxma",
+			"articles",
+			"article",
+			"list",
+			"getList",
+			" getlist\n",
+			" \n",
+			"getlist",
+			"conn",
+			"config",
+			"listarticles",
+			"prepare",
+			"results",
+			"exception",
+			"handleException",
+			"results",
+			"articles",
+			"index"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$user_info",
+			":"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "D:\\xampp\\htdocs\\Graphite-Front\\application"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17508,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								663,
+								663
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 19,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "controllers/map.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2113,
+								2113
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": -1,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/detail_page.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								447,
+								447
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "",
+							"function_name_status_row": 14,
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "libraries/Googlemaps.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90372,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22056,
+								22056
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 237,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "models/show_markers.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								588,
+								588
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 23,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "config/autoload.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3788,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2374,
+								2374
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 83,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2462.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/view_home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								286,
+								220
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 9,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\xampp\\htdocs\\test\\templates\\homepage.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 188.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
