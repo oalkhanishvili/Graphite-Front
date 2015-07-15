@@ -15,6 +15,14 @@ class show_markers extends CI_Model{
 		}
 		return $result;
 	}
+	public function detail_page($id){
+		$this->db->select('*');
+		$this->db->where('id', $id);
+		$this->db->from('peaceofart');
+		$query = $this->db->get();
+		$result = $query->row_array();
+		return $result;
+	}
 	public function insert_markers($data){
 		$this->insert('peaceofart' ,$data);
 	}

@@ -1,0 +1,11 @@
+div.marker{
+    text-align:center;
+}
+div.marker img{
+    border:1px solid grey;
+    opacity:0.6;
+    transition:0.4s opacity;
+}
+div.marker img:hover{
+    opacity:1;
+}
