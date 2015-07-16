@@ -9,3 +9,142 @@ div.marker img{
 div.marker img:hover{
     opacity:1;
 }
+
+body{
+	overflow-x:hidden; 
+
+}
+
+.container-fluid{
+	padding: 0;
+	overflow-y:scroll; 
+
+
+}
+
+.carousel-inner .item{
+
+	height: 644px;
+}
+
+.carousel-inner img{
+	width: 100%;
+	height:644px;
+
+	
+}
+
+.carousel{
+	margin-top: 0 !important;
+}
+
+
+#map_canvas{
+	height: 644px !important;
+}
+
+
+.map_container .map_canvas{
+    background: #ccc;
+    width: 100%;
+    height: 644px;
+}
+ /* --------------------------------------- */
+		
+		.content{
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+		}
+
+		/* Section 1
+		 * --------------------------------------- */
+		#section0{
+			background-color: #DFDDE1;
+		}
+		#section0 h1{
+			color: #444;
+		}
+		#section0 p{
+			color: #333;
+			opacity: 0.4;
+		}
+
+
+		/* Section 2
+		 * --------------------------------------- */
+		#section1{
+			background-color: #DFDDE1;
+		}
+		#section1 h1{
+			color: #fff;
+		}
+		#section1 p{
+			opacity: 0.8;
+		}
+
+
+		/* Section 3
+		 * --------------------------------------- */
+		#section2{
+			background-color: #2C3E50;
+		}
+		#section2 h1{
+			color: #F2F2F2;
+		}
+		#section2 p{
+			opacity: 0.6;
+		}
+
+.fp-prev, .fp-next{
+	opacity: 0.5;
+}
+
+.header-logo{
+	position: fixed;
+	z-index: 11111;
+	width: 100%;
+	background: rgba(0,0,0,0.3);
+	height: 42px;
+}
+
+.header-logo img{
+	width: 27px;
+	margin: 2px;
+}
+
+.registration{
+	margin: 4px;
+	opacity: 1 !important;
+}
+
+.sig-up{
+	opacity: 1;
+}
+
+.sign-in{
+	opacity: 1;
+	color: #fff;
+	margin: 7px 0;
+	cursor: pointer;
+}
+
+.sign-in a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.registartion-border{
+	border-right: 1px solid #fff;
+	margin: 11px 16px 0 9px;
+	height: 13px;
+}
+
+.fa-bars{
+	color: #000;	
+	position: fixed;
+	z-index: 111;
+	left:-7px;
+	top:50%;
+}

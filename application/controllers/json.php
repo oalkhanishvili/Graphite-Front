@@ -2,7 +2,7 @@
 class json extends  CI_Controller
 {
 
-    public function peaceoefart()
+    public function peaceofart()
     {
         $this->load->model('forjson');
         $result=$this->forjson->join();
