@@ -13,16 +13,21 @@
 	</head>
 	<body>
 		<div class="container header-logo">
+			<div class="sidebar-right">
+				
+			</div>
 			<img src="<?php echo base_url('img/marker11.png'); ?>"  class="img-responsive pull-left" alt="Image">
 
 			<div class="pull-right registration">				
 				<button type="button" class="btn btn-success sign-up pull-right">Sign Up</button>
-				<span class="registartion-border pull-right">&nbsp;</span>
-				<p class="pull-right sign-in"><a href="">Sign In</a></p>
+				<span class="registartion-border pull-right ">&nbsp;</span>
+				<p class="pull-right sign-in " >Sign In</p>
 			</div>
 
 		</div>
-		<div id="fullpage">			
+		<div id="fullpage">	
+			
+
 			<div class="section" id="section0">
 				<div class="slide" id="slide1">
 					<div class="content">
@@ -42,13 +47,21 @@
 			</div>
 			<div class="section" id="section1">
 				<div class="content">
-
 					<div class="map_container">
-						<a href=""><i class="fa fa-bars fa-2x"></i></a>
-						<?php echo $map['html']; ?>
+						<i class="fa fa-bars fa-2x"></i>
+						<div class="mapp">						
+							<?php echo $map['html']; ?>
+						</div>
 					</div>
+					<div class="sidebar">
+							
+						</div>
+					
 				</div>
+
 			</div>
+
+			
 		</div>
 		
 	</body>
@@ -57,13 +70,13 @@
 	<script type="text/javascript" src="<?php echo base_url('assets/js/javascript.fullPage.min.js'); ?>"></script>
 	<script type="text/javascript">
 		fullpage.initialize('#fullpage', {
-			anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-			menu: '#menu',
-			css3:true,
-			scrollingSpeed: 1500,
-			slidesNavigation: true
-
-		});
+		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+		menu: '#menu',
+		css3:true
+	});
 	</script>
+
+
 	<script src="<?php echo base_url('assets/js/script.js'); ?>"></script>
+
 </html>
