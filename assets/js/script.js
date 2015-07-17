@@ -1,13 +1,51 @@
 $(document).ready(function(){
-    $(".fa-bars").hover(function(event){
 
+  $('button').click(function(){
+    $(this).css({'outline': 'none'});
+  });
+
+
+
+    /* bar slide on hover*/
+    $(".fa-bars").hover(function(event){
     	$(this).stop().animate({'left':'5px'}, 200)
     }, function(){
     	$(this).stop().animate({'left':'-7px'}, 200)
     });
 
-   $('.registration').fadeIn(2000);
+    /* rif=ght sidebar animation*/
+  
+    $('.sign-in').click(function(){
+      $('.registration').toggleClass('reg-slide');
+      $('.sidebar-right').toggleClass('sidebar-right-open');
+
+      if($('.sidebar').hasClass('sidebar-open') && $('.mapp').hasClass('menu-open')){
+        $('.sidebar, .mapp, .fa-bars').removeClass('sidebar-open menu-open');
+      }
+   });
+
+    $('.sign-close').on('click', function(){
+      $('.sidebar-right, .registration').removeClass('sidebar-right-open reg-slide');
+    });
+
+    /*sign in button*/
+   $(".click-load").click(function() {
+    var $btn = $(this);
+    $btn.button('loading');
+      setTimeout(function () {
+        $('.mapp, .fa-bars').toggleClass('menu-open');
+        $('.sidebar').toggleClass('sidebar-open');
+    }, 3000);
+      // Then whatever you actually want to do i.e. submit form
+      
+
+    // After that has finished, reset the button state using
+    setTimeout(function () {
+        $btn.button('reset');
+    }, 3000);
+});
    
+   /*burger sidebar left*/
    $('.fa-bars').click(function(){
       $(this).toggleClass('menu-open');
    		$('.mapp').toggleClass('menu-open');
@@ -15,11 +53,8 @@ $(document).ready(function(){
    });
 
 
-   $('.registration').click(function(){
-      $(this).toggleClass('reg-open');
-      $('.mapp').toggleClass('reg-open');
-      $('.sidebar-right').toggleClass('sidebar-right-open');
-   });
+
+  
 
 
 });//end body

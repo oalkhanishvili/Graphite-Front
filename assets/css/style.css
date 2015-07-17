@@ -1,5 +1,14 @@
 body{
+	overflow: hidden;
+}
 
+button{
+	outline: 0;
+	border: 0;
+}
+
+legend{
+	border: none;
 }
 
 div.marker{
@@ -151,13 +160,14 @@ div.marker img:hover{
 .registration{
 	margin: 4px;
 	transition: all .8s;
-	display: none;
+
 }
 
 
 .sig-up{
 	opacity: 1;
 }
+
 
 .sign-in{
 	opacity: 1;
@@ -166,10 +176,42 @@ div.marker img:hover{
 	cursor: pointer;
 }
 
-.sign-in a{
-	color: #fff;
-	text-decoration: none;
+.sign-close{
+	cursor: pointer;
 }
+
+.sign-in-inputs label, legend{
+	margin:2px;
+	color:#fff;
+}
+
+.sign-in-inputs input{
+	height: 30px;
+	border-radius: 1px;
+	outline: none;
+}
+
+.sign-in-inputs input:focus{
+	outline: none;
+	border: none;
+}
+
+.sidebar-right{
+	position: fixed;
+	z-index: 111;
+	top:0;
+	right:-200px;
+	width: 200px;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	transition: all .8s;
+	padding: 4px;
+}
+
+.loading{
+	display: none !important;
+}
+
 
 .registartion-border{
 	border-right: 1px solid #fff;
@@ -183,6 +225,7 @@ div.marker img:hover{
 	z-index: 111;
 	left:-7px;
 	top:50%;
+	cursor: pointer;
 	transition: all .8s;
 }
 
@@ -227,21 +270,12 @@ canvas{
 	left:-300px;
 	width: 300px;
 	height: 100%;
-	background: blue;
+	background: #616269;
 	transition: all .8s;
 	
 }
 
-.sidebar-right{
-	position: fixed;
-	z-index: 111;
-	top:0;
-	right:-200px;
-	width: 200px;
-	height: 100%;
-	background: yellow;
-	transition: all .8s;
-}
+
 
 .mapp{
 	position: relative;
@@ -262,7 +296,7 @@ canvas{
 	transition: all 0.8s ease;
 }
 
-.reg-open{
+.reg-slide{
 	margin-right:200px !important;
 	transition: all .8s;
 }
@@ -295,5 +329,17 @@ canvas{
     color:#fff;
 }
 
+.zoom-inf{
+	color:#000;
 
+}
+
+.fa-search-plus{
+
+}
+
+.marker img{
+	padding: 0;
+	margin: 0;
+}
 

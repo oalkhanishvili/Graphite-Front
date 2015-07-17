@@ -23,7 +23,7 @@ class Googlemaps {
 	var $apiKey						= ''; 						// If you've got an API key you can use it by passing this parameter. Setup an API key here: https://code.google.com/apis/console
 	var $backgroundColor			= '';						// A hex color value shown as the map background when tiles have not yet loaded as the user pans
 	var $bicyclingOverlay			= FALSE;					// If set to TRUE will overlay bicycling information (ie. bike paths and suggested routes) onto the map by default 
-	var $center						= "37.4419, -122.1419";		// Sets the default center location (lat/long co-ordinate or address) of the map. If defaulting to the users location set to "auto"
+	var $center						= "41.7102767, 44.7892072";		// Sets the default center location (lat/long co-ordinate or address) of the map. If defaulting to the users location set to "auto"
 	var $class 						= '';						// A class name if wishing to style the map further through CSS. Can also be useful if wanting it to be responsive etc.
 	var $cluster					= FALSE;					// Whether to cluster markers
 	var $clusterGridSize			= 60;						// The grid size of a cluster in pixels
@@ -84,7 +84,7 @@ class Googlemaps {
 	var	$panoramioUser				= '';						// Restrict the set of Panoramio photos shown to those matching a particular user
 	var $region						= '';						// Country code top-level domain (eg "uk") within which to search. Useful if supplying addresses rather than lat/longs
 	var $scaleControlPosition		= '';						// The position of the Scale control, eg. 'BOTTOM_RIGHT'
-	var $scrollwheel				= TRUE;						// If set to FALSE will disable zooming by scrolling of the mouse wheel
+	var $scrollwheel				= FALSE;						// If set to FALSE will disable zooming by scrolling of the mouse wheel
 	var $sensor						= FALSE;					// Set to TRUE if being used on a device that can detect a users location
 	var $streetViewAddressControl	= TRUE;						// If set to FALSE will hide the Address control
 	var $streetViewAddressPosition	= '';						// The position of the Address control, eg. 'BOTTOM'

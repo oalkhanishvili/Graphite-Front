@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/javascript.fullPage.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/fonts.css'); ?>">
@@ -14,14 +14,24 @@
 	<body>
 		<div class="container header-logo">
 			<div class="sidebar-right">
-				
+				<form action="" method="" role="form">
+					<legend class="pull-right"><i class='fa fa-close fa-md pull-right sign-close'></i></legend>									
+					<div class="form-group sign-in-inputs">
+						<label for=""></label>
+						<input type="text" class="form-control" id="" placeholder="Username">
+						<label for=""></label>
+						<input type="text" class="form-control" id="" placeholder="Password">
+					</div>
+					<button id="submitaction" class="btn btn-sm btn-warning click-load" data-loading-text="&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-cog fa-spin'></i>&nbsp;&nbsp;&nbsp;&nbsp;" type="">Sign in</button>
+					
+				</form>
 			</div>
 			<img src="<?php echo base_url('img/marker11.png'); ?>"  class="img-responsive pull-left" alt="Image">
 
 			<div class="pull-right registration">				
-				<button type="button" class="btn btn-success sign-up pull-right">Sign Up</button>
+				<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
 				<span class="registartion-border pull-right ">&nbsp;</span>
-				<p class="pull-right sign-in " >Sign In</p>
+				<p class="pull-right sign-in" >Sign In</p>
 			</div>
 
 		</div>
