@@ -35,6 +35,7 @@ $(document).ready(function(){
       setTimeout(function () {
         $('.mapp, .fa-bars').toggleClass('menu-open');
         $('.sidebar').toggleClass('sidebar-open');
+        $('.sidebar-right, .registration').removeClass('sidebar-right-open reg-slide');
     }, 3000);
       // Then whatever you actually want to do i.e. submit form
       
@@ -52,9 +53,13 @@ $(document).ready(function(){
    		$('.sidebar').toggleClass('sidebar-open');
    });
 
+ 
+/*dont works */
+     
+       
 
-
-  
+        
 
 
 });//end body
+

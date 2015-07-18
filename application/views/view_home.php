@@ -26,7 +26,7 @@
 					
 				</form>
 			</div>
-			<img src="<?php echo base_url('img/marker11.png'); ?>"  class="img-responsive pull-left" alt="Image">
+			<img src="<?php echo base_url('img/icons/logo.png'); ?>"  class="img-responsive pull-left" alt="Image">
 
 			<div class="pull-right registration">				
 				<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
@@ -35,25 +35,33 @@
 			</div>
 
 		</div>
-		<div id="fullpage">	
-			
 
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		      </div>
+		      <div class="modal-body">
+		        <img src="<?php echo base_url('assets/img/4.jpg'); ?>" alt="">
+		      </div>
+		      
+		    </div>
+		  </div>
+		</div>
+		<div id="fullpage">	
 			<div class="section" id="section0">
-				<div class="slide" id="slide1">
-					<div class="content">
-						<img src="<?php echo base_url('assets/img/img.jpg'); ?>" alt="">
+				<div class="slide" id="slide1"></div>
+				<div class="slide" id="slide2"></div>
+				<div class="slide" id="slide3"></div>
+				<div class="slide" id="slide4"></div>
+				
+
+				<!-- <div class="content">
+						<img src="<?php //echo base_url('assets/img/img.jpg'); ?>" alt="">
 					</div>
-				</div>
-				<div class="slide" id="slide2">
-					<div class="content">
-						<img src="<?php echo base_url('assets/img/img1.jpg'); ?>" alt="">
-					</div>
-				</div>
-				<div class="slide" id="slide2">
-					<div class="content">
-						<img src="<?php echo base_url('assets/img/img3.jpg'); ?>" alt="">
-					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="section" id="section1">
 				<div class="content">
@@ -64,15 +72,30 @@
 						</div>
 					</div>
 					<div class="sidebar">
-							
-						</div>
+						<!--star rating 
+							<div class="star-rating">
+						      <div class="star-rating__wrap">
+						        <input class="star-rating__input" id="star-rating-5" type="radio" name="rating" value="5">
+						        <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-5" title="5 out of 5 stars"></label>
+						        <input class="star-rating__input" id="star-rating-4" type="radio" name="rating" value="4">
+						        <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-4" title="4 out of 5 stars"></label>
+						        <input class="star-rating__input" id="star-rating-3" type="radio" name="rating" value="3">
+						        <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-3" title="3 out of 5 stars"></label>
+						        <input class="star-rating__input" id="star-rating-2" type="radio" name="rating" value="2">
+						        <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-2" title="2 out of 5 stars"></label>
+						        <input class="star-rating__input" id="star-rating-1" type="radio" name="rating" value="1">
+						        <label class="star-rating__ico fa fa-star-o fa-lg" for="star-rating-1" title="1 out of 5 stars"></label>
+						      </div>
+						    </div>							
+						</div> -->
 					
 				</div>
 
 			</div>
 
 			
-		</div>
+					</div>
+			
 		
 	</body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -82,8 +105,13 @@
 		fullpage.initialize('#fullpage', {
 		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
 		menu: '#menu',
-		css3:true
+		css3:true,
+		scrollingSpeed: 1000,
+		easing: 'easeInOutCubic',
+
+
 	});
+
 	</script>
 
 
