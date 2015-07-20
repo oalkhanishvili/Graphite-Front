@@ -21,7 +21,7 @@ li{
 	color:#2F2F2F;
 }
 
-..cap-link p{
+.cap-link p{
 	color:#000;
 }
 
@@ -36,12 +36,15 @@ h4{
 }
 
 figure{
+  padding: 0 0 !important;
+  height: 90px;
+  margin-bottom: 31px;
 
-	padding: 0 0  !important;
-	height: 125px;
-	margin-bottom: 30px;
-	
+}
 
+.figure-dots{
+	  margin-left: 76px;
+	  color:rgba(0,0,0,0.3);
 }
 
 
@@ -55,27 +58,37 @@ figcaption{
 	width: 190px;
 	text-align:left;
 	float: right;
-	position: relative;
+	
 }
 
 figcaption h4{
-	  margin-top: 6px;
+	margin-top: 6px;
+  	
   	margin-bottom: 0px;
+  	font-size:14px;
+}
+
+figcaption p{
+	position: relative;
+	  height: 96px;
 }
 
 .fa-comment{
-	position: absolute;
-	bottom:-62px;
 	color:#454545;
 	font-size: 12px !important;
+	
 }
 
 .fa-eye{
-	position: absolute;
-	bottom:-62px;
-	left:38px;
 	font-size: 12px !important;
 	color:#454545;
+
+}
+
+.fa-angle-right{
+	position: absolute;
+	left:0px;
+	top: 5px;
 }
 
 legend{
@@ -443,11 +456,15 @@ canvas{
 
 
 .star-rating{
-	
 	position: absolute;
 	right: 5px;
-  	bottom: -70px;
+  	  top: 100px;
 	
+}
+
+.comment-icons{
+	position: absolute;
+	  top: 97px;
 }
 
 
