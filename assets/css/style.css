@@ -18,12 +18,16 @@ li{
 }
 
 .cap-link{
-	color:#ff513f;
+	color:#2F2F2F;
+}
+
+..cap-link p{
+	color:#000;
 }
 
 .cap-link:hover{
 	text-decoration: none;
-	color:#ff513f;
+	color:#2F2F2F;
 }
 
 h4{
@@ -32,10 +36,23 @@ h4{
 }
 
 figure{
+
 	padding: 0 0  !important;
 	height: 125px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	margin-bottom: 30px;
+	
 
+}
+
+.bottom-line{
+	height: 123px;
+	margin: 22px 138px;
+	width: 90px;
+	border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+figure img{
+	cursor: pointer;
 }
 
 figcaption{
@@ -47,7 +64,7 @@ figcaption{
 
 figcaption h4{
 	  margin-top: 6px;
-  margin-bottom: 0px;
+  	margin-bottom: 0px;
 }
 
 legend{
@@ -348,10 +365,10 @@ canvas{
 {	position: fixed;
 	z-index: 111;
 	top:45px;
-	
+	overflow: scroll;
 	padding: 80px 5px 0 5px;
-	left:-370px;
-	width: 370px;
+	left:-395px;
+	width: 395px;
 	height: 100%;
 	background: #D2D3D7;
 	transition: all .8s;
@@ -436,7 +453,7 @@ canvas{
 	float: right;
 	padding-left: 2px;
 	cursor: pointer;
-	color: #FFB300;
+	color: #FF513F;
 }
 .star-rating__ico:last-child{
 	padding-left: 0;
@@ -459,7 +476,7 @@ canvas{
 }
 
 .menu-open{
-	margin-left:370px !important;
+	margin-left:395px !important;
 }
 
 .sidebar-open{
