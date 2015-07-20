@@ -44,12 +44,7 @@ figure{
 
 }
 
-.bottom-line{
-	height: 123px;
-	margin: 22px 138px;
-	width: 90px;
-	border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-}
+
 
 figure img{
 	cursor: pointer;
@@ -65,6 +60,21 @@ figcaption{
 figcaption h4{
 	  margin-top: 6px;
   	margin-bottom: 0px;
+}
+
+.fa-comment{
+	position: absolute;
+	bottom:-62px;
+	color:#454545;
+	font-size: 12px !important;
+}
+
+.fa-eye{
+	position: absolute;
+	bottom:-62px;
+	left:38px;
+	font-size: 12px !important;
+	color:#454545;
 }
 
 legend{
