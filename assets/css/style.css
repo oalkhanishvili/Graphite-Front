@@ -8,6 +8,48 @@ button{
 	border-radius: 1px !important;
 }
 
+
+p{
+	font-family: BPGArial;
+}
+
+li{
+	list-style: none;
+}
+
+.cap-link{
+	color:#ff513f;
+}
+
+.cap-link:hover{
+	text-decoration: none;
+	color:#ff513f;
+}
+
+h4{
+	font-family: ninomtavruli;
+	font-weight: bold;
+}
+
+figure{
+	padding: 0 0  !important;
+	height: 125px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+
+figcaption{
+	width: 190px;
+	text-align:left;
+	float: right;
+	position: relative;
+}
+
+figcaption h4{
+	  margin-top: 6px;
+  margin-bottom: 0px;
+}
+
 legend{
 	border: none;
 }
@@ -238,11 +280,11 @@ div.marker img:hover{
 .sidebar-right{
 	position: fixed;
 	z-index: 111;
-	top:0;
+	top:0px;
 	right:-200px;
 	width: 200px;
 	height: 100%;
-	background: rgba(0,0,0,0.8);
+	background:#EFEFEF;
 	transition: all .8s;
 	padding: 4px;
 }
@@ -305,15 +347,21 @@ canvas{
 .sidebar
 {	position: fixed;
 	z-index: 111;
-	top:0;
-	left:-300px;
-	width: 300px;
-	height: 100%;
-	background: #616269;
-	transition: all .8s;
-
+	top:45px;
 	
+	padding: 80px 5px 0 5px;
+	left:-370px;
+	width: 370px;
+	height: 100%;
+	background: #D2D3D7;
+	transition: all .8s;
 }
+
+.sidebar img{
+	float: left;
+	width: 170px;
+	height: 120px;
+	padding-right: 9px;	}
 
 .marker{
 	
@@ -368,16 +416,16 @@ canvas{
 
 .star-rating{
 	
-	
+	position: absolute;
+	right: 5px;
+  	bottom: -70px;
 	
 }
 
-.star-rating{
-	font-size: 40px;
-}
+
 .star-rating__wrap{
 	display: inline-block;
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
 .star-rating__wrap:after{
 	content: "";
@@ -401,6 +449,7 @@ canvas{
 .star-rating__input:checked ~ .star-rating__ico:before
 {
 	content: "\f005";
+
 }
 
 
@@ -410,7 +459,7 @@ canvas{
 }
 
 .menu-open{
-	margin-left:300px !important;
+	margin-left:370px !important;
 }
 
 .sidebar-open{
