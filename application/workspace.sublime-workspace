@@ -248,13 +248,10 @@
 			}
 		},
 		{
-			"contents": "<?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n\nclass map extends CI_Controller{\n	public function __construct(){\n		parent::__construct();\n		$this->load->library('googlemaps');\n\n		$config['center'] = '41.699833, 44.803448';\n		$config['zoom'] = 'auto';\n		$config['zoom'] = 'auto';\n		$config['disableMapTypeControl'] = TRUE;\n		$this->googlemaps->initialize($config);\n\n	}\n	public function index(){\n\n		$this->load->model('show_markers');\n		$list = $this->show_markers->select_markers();\n\n		foreach ( $list as $items ){\n			$marker = array();\n			$marker['position'] = $items['latitude'].','.$items['longitude'];\n			$html  = \"<div class='marker'><h2>{$items['title']}</h1>\";\n			$html .= \"<p><img src=\".base_url('img/'.$items['pic_name']).\" height=150px></p>\";\n			$html .= \"<p>{$items['description']}</p></div>\";\n			$html .= \"<p><a href=\".site_url('map/detail_page/'.$items['id']).\">დეტალური გვერდი</a></p></div>\";\n			$marker['infowindow_content'] = $html;\n			if ( $items['category_id'] == 2 ){\n			$marker['icon'] = base_url('img/marker.png');\n			}\n			$marker['animation'] = 'DROP';\n			$marker['draggable'] = FALSE;\n			$this->googlemaps->add_marker($marker);\n		}\n\n		$data['map'] = $this->googlemaps->create_map();\n\n		$this->load->view('view_home', $data);\n\n	}\n	public function detail_page($id){\n		$this->load->model('show_markers');\n		$result = $this->show_markers->detail_page($id);\n\n		$data['detail_page'] = $result;\n		$data['map'] = $this->googlemaps->create_map();\n		$this->load->view('detail_page', $data);\n	}\n	public function insert_mark(){\n\n		if ( $_SERVER['REQUEST_METHOD'] == 'POST' ){\n		$data = array(\n			'user_id' => $this->input->post('user_id'),\n			'category_id' => $this->input->post('category_id'),\n			'pic_name' => $this->input->post('pic_name'),\n			'title' => $this->input->post('title'),\n			'longitude' => $this->input->post('longitude'),\n			'latitude' => $this->input->post('latitude'),\n			);\n		$this->load->model('show_markers');\n		$this->show_markers->insert_markers($data);\n		}\n		$data['map'] = $this->googlemaps->create_map();\n		$this->load->view('insert_marker', $data);\n	}\n}",
 			"file": "controllers/map.php",
-			"file_size": 2178,
-			"file_write_time": 130814421720983253,
 			"settings":
 			{
-				"buffer_size": 2113,
+				"buffer_size": 2165,
 				"line_ending": "Windows"
 			}
 		},
@@ -262,16 +259,8 @@
 			"file": "views/detail_page.php",
 			"settings":
 			{
-				"buffer_size": 478,
+				"buffer_size": 485,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "libraries/Googlemaps.php",
-			"settings":
-			{
-				"buffer_size": 90372,
-				"line_ending": "Unix"
 			}
 		},
 		{
@@ -294,7 +283,7 @@
 			"file": "views/view_home.php",
 			"settings":
 			{
-				"buffer_size": 294,
+				"buffer_size": 4952,
 				"line_ending": "Windows"
 			}
 		}
@@ -306,7 +295,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 196.0,
+		"height": 296.0,
 		"last_filter": "install",
 		"selected_items":
 		[
@@ -351,7 +340,7 @@
 				"Set Syntax: PHP"
 			]
 		],
-		"width": 528.0
+		"width": 536.0
 	},
 	"console":
 	{
@@ -381,6 +370,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/dalkh_000/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/dalkh_000/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/xampp/htdocs/Graphite-Front/application/libraries/Googlemaps.php",
 		"/D/xampp/htdocs/code/application/views/single_news.php",
 		"/D/xampp/htdocs/peaceofart/application/.htaccess",
 		"/D/xampp/htdocs/amanatebi/application/third_party/index.html",
@@ -505,10 +497,7 @@
 		"/D/xampp/htdocs/test/includes/classes.php",
 		"/D/xampp/htdocs/test/public/index.php",
 		"/D/xampp/htdocs/saswavlo/select.php",
-		"/D/xampp/htdocs/saswavlo/kodebi/PDOfetch.php",
-		"/D/xampp/htdocs/test/public/registration.php",
-		"/D/xampp/htdocs/test/public/stylesheets/style.css",
-		"/D/xampp/htdocs/saswavlo/option.php"
+		"/D/xampp/htdocs/saswavlo/kodebi/PDOfetch.php"
 	],
 	"find":
 	{
@@ -650,7 +639,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -680,10 +669,10 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -692,21 +681,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2113,
+						"buffer_size": 2165,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2113,
-								2113
+								1114,
+								1114
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"function_name_status_row": -1,
+							"function_name_status_row": 29,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -714,10 +703,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 234.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -726,67 +715,34 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 478,
+						"buffer_size": 485,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								447,
-								447
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"auto_name": "",
-							"function_name_status_row": 14,
+							"function_name_status_row": 0,
 							"incomplete_sync": null,
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "libraries/Googlemaps.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 90372,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22056,
-								22056
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 237,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
 						"translation.x": 0.0,
-						"translation.y": 4180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "models/show_markers.php",
 					"semi_transient": false,
 					"settings":
@@ -813,14 +769,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "config/autoload.php",
 					"semi_transient": false,
 					"settings":
@@ -846,40 +802,40 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2462.0,
+						"translation.y": 3553.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "views/view_home.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 294,
+						"buffer_size": 4952,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								286,
-								220
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"function_name_status_row": 9,
+							"function_name_status_row": 63,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1211.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,

@@ -24,6 +24,16 @@ class show_markers extends CI_Model{
 		return $result;
 	}
 	public function insert_markers($data){
-		$this->insert('peaceofart' ,$data);
+		$this->db->insert('peaceofart' ,$data);
+	}
+	public function select_category(){
+		$this->db->select('*');
+		$this->db->from('category');
+		$query = $this->db->get();
+
+		foreach ( $query->result_array() as $row ) {
+			$result[] = $row;
+		}
+		return $result;
 	}
 }
