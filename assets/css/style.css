@@ -8,6 +8,196 @@ button{
 	border-radius: 1px !important;
 }
 
+
+p{
+	font-family: BPGArial;
+}
+
+li{
+	list-style: none;
+}
+
+.cap-link{
+	color:#2F2F2F;
+}
+
+.cap-link p{
+	color:#000;
+}
+
+.cap-link:hover{
+	text-decoration: none;
+	color:#2F2F2F;
+}
+
+h4{
+	font-family: ninomtavruli;
+	font-weight: bold;
+}
+
+figure{
+  padding: 0 0 !important;
+  height: 90px;
+  margin-bottom: 80px;
+  
+
+}
+
+figure:last-child{
+	padding-bottom: 200px !important;
+}
+
+.figure-dots{
+	  margin-left: 76px;
+	  color:rgba(0,0,0,0.3);
+}
+
+
+
+figure img{
+	cursor: pointer;
+	  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
+}
+
+figcaption{
+	width: 190px;
+	text-align:left;
+	float: right;
+	  margin-left: 12px;
+	
+}
+
+figcaption h4{
+	margin-top: 6px;
+  	
+  	margin-bottom: 0px;
+  	font-size:14px;
+}
+
+figcaption p{
+	position: relative;
+	  height: 96px;
+}
+
+.fa-comment{
+	color:#595959;
+	font-size: 12px !important;
+	
+}
+
+.fa-eye{
+	font-size: 12px !important;
+	color:#595959;
+
+}
+
+.fa-thumbs-o-up{
+	position: absolute;
+	color:rgb(0,0,0, 0.7);
+	top: 98px;
+	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+  	right: 10px;
+  	font-size:19px !important;
+  	cursor: pointer;
+  	transition:all 0.0s;
+}
+
+.fa-thumbs-up{
+	position: absolute;
+	color:#176CED;
+	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+	top: 98px;
+  	right: 10px;
+  	font-size:19px !important;
+  	cursor: pointer;
+	
+
+}
+
+.tab-content{
+	position: relative;
+	display: none;
+}
+
+
+
+/*
+.tab-content:before {
+    content: "\f000";
+    position: absolute;
+    font-family:fontawesome;
+    top:150px;
+}*/
+
+.fa-angle-right{
+	position: absolute;
+	left:0px;
+	top: 5px;
+}
+
+.dinamic-tabs{
+
+}
+
+.img-responsive{
+	
+}
+
+.nav-tabs{
+	position: fixed;
+	top:120px;
+	  
+	  border-bottom: 0px solid #A4C1DA;
+	  width: 360px;
+	  border-bottom: 1px solid #ccc
+	  	
+}
+
+.like{
+	content: "\f164";
+}
+
+#nav-marker { 
+	position: fixed; 
+	display: block;   
+	height: 39px;
+	width: 180px;
+	border-bottom: 4px solid #C81835; 
+}
+
+#figure-line{
+	height: 146px;
+	border-bottom: 1px solid rgba(48, 48, 48, 0.1);
+	width: 50px;
+	margin-left: 170px;	
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover{
+	background: none;
+	border:none;
+	/*border-bottom: 4px solid #FF513F;*/
+	padding-bottom: 5px;
+	
+}
+
+.nav-tabs>li a:hover{
+	background: none;
+}
+
+.myClasse{
+	display: none;
+}
+
+.nav-tabs>li>a{
+	border:none; 
+	width: 180px;
+	margin-right: 0px;
+
+
+}
+
 legend{
 	border: none;
 }
@@ -238,11 +428,11 @@ div.marker img:hover{
 .sidebar-right{
 	position: fixed;
 	z-index: 111;
-	top:0;
+	top:0px;
 	right:-200px;
 	width: 200px;
 	height: 100%;
-	background: rgba(0,0,0,0.8);
+	background:#EFEFEF;
 	transition: all .8s;
 	padding: 4px;
 }
@@ -305,15 +495,44 @@ canvas{
 .sidebar
 {	position: fixed;
 	z-index: 111;
-	top:0;
-	left:-300px;
-	width: 300px;
+	top:45px;
+	overflow: hidden;
+	padding:119px 5px 0 5px;
+	left:-395px;
+	width: 395px;
 	height: 100%;
-	background: #616269;
+	background: #F1EFE9;
 	transition: all .8s;
+	/*border-right: 1px solid #FF513F;*/
 
-	
 }
+
+       
+#min-thumb-size-demo .horizontal .thumb {
+    min-width: 300px;
+}
+
+#fixed-thumb-size-demo {
+    width: 400px;
+    height: 200px;
+}
+
+/* Vertical and horizontal scrollbar - one extra step required - add width of overview - overall width of scrolled content*/
+#fixed-thumb-size-demo .overview {
+    width: 600px;
+}
+
+/*No scrollbar needed*/
+#no-scrollbar-needed {
+    max-height: 100px;
+    max-width: 400px;
+}
+
+.sidebar img{
+	float: left;
+	width: 170px;
+	height: 120px;
+	margin-right: 7px;	}
 
 .marker{
 	
@@ -366,18 +585,22 @@ canvas{
 }
 
 
-.star-rating{
-	
-	
+.stars{
+	position: absolute;
+	right: 5px;
+  	  top: 100px;
 	
 }
 
-.star-rating{
-	font-size: 40px;
+.comment-icons{
+	position: absolute;
+	  top: 97px;
 }
+
+
 .star-rating__wrap{
 	display: inline-block;
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
 .star-rating__wrap:after{
 	content: "";
@@ -388,7 +611,7 @@ canvas{
 	float: right;
 	padding-left: 2px;
 	cursor: pointer;
-	color: #FFB300;
+	color: #FF513F;
 }
 .star-rating__ico:last-child{
 	padding-left: 0;
@@ -401,6 +624,7 @@ canvas{
 .star-rating__input:checked ~ .star-rating__ico:before
 {
 	content: "\f005";
+
 }
 
 
@@ -410,7 +634,7 @@ canvas{
 }
 
 .menu-open{
-	margin-left:300px !important;
+	margin-left:395px !important;
 }
 
 .sidebar-open{
@@ -463,6 +687,10 @@ canvas{
 
 .fa-search-plus{
 
+}
+
+.scrollable.default-skin{
+	padding-bottom: 0;
 }
 
 

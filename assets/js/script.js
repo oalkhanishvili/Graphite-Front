@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var wScroll = $(this).scrollTop();
 
   $('button').click(function(){
     $(this).css({'outline': 'none'});
@@ -54,9 +55,33 @@ $(document).ready(function(){
    });
 
  
-/*dont works */
+/* end dont works */
      
-       
+ /*sidebar*/
+
+  //nav
+
+
+//nav border slice
+$('.nav-tabs li').click( function() { 
+    var left = $(this).offset().left;
+    $('#nav-marker').stop().animate( {  left: left  }, 800 );
+    
+});
+
+$('.fa-thumbs-o-up').click(function(){
+    $(this).toggleClass('fa-thumbs-up');
+  });
+
+$('.fa-thumbs-up').click(function(){
+    $(this).toggleClass('fa-thumbs-o-up');
+  });
+
+$('.fa-bars').click(function(){
+  
+  $('.tab-content').fadeIn(4000);
+
+});
 
         
 
