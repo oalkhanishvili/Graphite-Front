@@ -56,13 +56,14 @@ figure:last-child{
 
 figure img{
 	cursor: pointer;
-	box-shadow: 0 8px 11px -8px rgba(0,0,0,0.5)
+	  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
 }
 
 figcaption{
 	width: 190px;
 	text-align:left;
 	float: right;
+	  margin-left: 12px;
 	
 }
 
@@ -79,16 +80,40 @@ figcaption p{
 }
 
 .fa-comment{
-	color:#454545;
+	color:#D5412C;
 	font-size: 12px !important;
 	
 }
 
 .fa-eye{
 	font-size: 12px !important;
-	color:#454545;
+	color:#FDC12E;
 
 }
+
+.fa-thumbs-o-up{
+	position: absolute;
+	color:rgb(0,0,0, 0.7);
+	top: 98px;
+	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+  	right: 10px;
+  	font-size:19px !important;
+  	cursor: pointer;
+  	transition:all 0.0s;
+}
+
+.fa-thumbs-up{
+	position: absolute;
+	color:#176CED;
+	text-shadow: 1px 1px 4px rgba(150, 150, 150, 1);
+	top: 98px;
+  	right: 10px;
+  	font-size:19px !important;
+  	cursor: pointer;
+	
+
+}
+
 
 .fa-angle-right{
 	position: absolute;
@@ -100,13 +125,37 @@ figcaption p{
 
 }
 
+.img-responsive{
+	
+}
+
 .nav-tabs{
 	position: fixed;
 	top:120px;
 	  
 	  border-bottom: 0px solid #A4C1DA;
 	  width: 360px;
+	  border-bottom: 1px solid #ccc
 	  	
+}
+
+.like{
+	content: "\f164";
+}
+
+#nav-marker { 
+	position: fixed; 
+	display: block;   
+	height: 39px;
+	width: 180px;
+	border-bottom: 4px solid #C81835; 
+}
+
+#figure-line{
+	height: 146px;
+	border-bottom: 1px solid rgba(48, 48, 48, 0.1);
+	width: 50px;
+	margin-left: 170px;	
 }
 
 .nav-tabs>li.active>a, 
@@ -114,16 +163,25 @@ figcaption p{
 .nav-tabs>li.active>a:hover{
 	background: none;
 	border:none;
-	border-bottom: 4px solid #FF513F;
-	color:#FF513F;
-	padding-bottom: 4px;
+	/*border-bottom: 4px solid #FF513F;*/
+	padding-bottom: 5px;
 	
+}
+
+.nav-tabs>li a:hover{
+	background: none;
+}
+
+.myClasse{
+	display: none;
 }
 
 .nav-tabs>li>a{
 	border:none; 
 	width: 180px;
-	margin-right: 0px;	
+	margin-right: 0px;
+
+
 }
 
 legend{
@@ -429,7 +487,7 @@ canvas{
 	left:-395px;
 	width: 395px;
 	height: 100%;
-	background: #F1F1F1;
+	background: #F1EFE9;
 	transition: all .8s;
 	/*border-right: 1px solid #FF513F;*/
 

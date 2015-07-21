@@ -21,14 +21,16 @@ class map extends CI_Controller{
 			$html  = "<div class='marker'><h2>{$items['title']}</h1>";
 			$html .= "<p data-toggle='modal' data-target='#myModal'><img src=".base_url('img/'.$items['pic_name'])." height=150px></p>";
 			$html .= "<p>{$items['description']}</p></div>";
-			$html .= "<p ><i class='fa fa-search-plus fa-md'></p></div>";//a href=".site_url('map/detail_page/'.$items['id']).">დეტალური გვერდი</a>
+			$html .= "<p ></p></div>";//a href=".site_url('map/detail_page/'.$items['id']).">დეტალური გვერდი</a>
 			$marker['infowindow_content'] = $html;
 			if ( $items['category_id'] == 2 ){
 			$marker['icon'] = base_url('img/marker.png');
 			}
 			$marker['animation'] = 'DROP';
 			$marker['draggable'] = FALSE;
+
 			$this->googlemaps->add_marker($marker);
+
 		}
 
 		$data['map'] = $this->googlemaps->create_map();
