@@ -80,14 +80,14 @@ figcaption p{
 }
 
 .fa-comment{
-	color:#D5412C;
+	color:#595959;
 	font-size: 12px !important;
 	
 }
 
 .fa-eye{
 	font-size: 12px !important;
-	color:#FDC12E;
+	color:#595959;
 
 }
 
@@ -114,6 +114,20 @@ figcaption p{
 
 }
 
+.tab-content{
+	position: relative;
+	display: none;
+}
+
+
+
+/*
+.tab-content:before {
+    content: "\f000";
+    position: absolute;
+    font-family:fontawesome;
+    top:150px;
+}*/
 
 .fa-angle-right{
 	position: absolute;

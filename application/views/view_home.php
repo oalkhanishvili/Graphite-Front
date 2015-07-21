@@ -82,7 +82,7 @@
 									<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
 									<figcaption class="caption">
 									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
+										<h4></i>გიორგი ეანიოვიჩეანიოვიჩეანიოვიჩეანიოვიჩ</h4>
 									</a>
 									<p>saburtalo, კოსტავას #24</p>
 									<div class='comment-icons'>
@@ -90,7 +90,7 @@
 										<i class="fa fa-eye">123</i>										
 									</div>
 									
-									<i class="fa fa-thumbs-o-up"></i>
+									<div ><i class="fa fa-thumbs-o-up"></i></div>
 									</figcaption>
 								</figure>
 
