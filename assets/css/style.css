@@ -43,6 +43,10 @@ figure{
 
 }
 
+figure:last-child{
+	padding-bottom: 200px !important;
+}
+
 .figure-dots{
 	  margin-left: 76px;
 	  color:rgba(0,0,0,0.3);
