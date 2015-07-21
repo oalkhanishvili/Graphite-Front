@@ -38,7 +38,7 @@ h4{
 figure{
   padding: 0 0 !important;
   height: 90px;
-  margin-bottom: 31px;
+  margin-bottom: 90px;
 
 }
 
@@ -51,7 +51,7 @@ figure{
 
 figure img{
 	cursor: pointer;
-	box-shadow: 0 8px 29px -9px rgba(0,0,0,0.5)
+	box-shadow: 0 8px 11px -8px rgba(0,0,0,0.5)
 }
 
 figcaption{
@@ -389,14 +389,15 @@ canvas{
 {	position: fixed;
 	z-index: 111;
 	top:45px;
-	overflow: scroll;
+	overflow: hidden;
 	padding: 80px 5px 0 5px;
 	left:-395px;
 	width: 395px;
 	height: 100%;
-	background: #D2D3D7;
+	background: #F1F1F1;
 	transition: all .8s;
 }
+
 
 .sidebar img{
 	float: left;

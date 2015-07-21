@@ -6,12 +6,37 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/javascript.fullPage.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.custom-scrollbar.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/fonts.css'); ?>">
 		<?php echo $map['js']; ?>
 		<title>Document</title>
 	</head>
 	<body>
+	<style type="text/css">
+
+       
+        #min-thumb-size-demo .horizontal .thumb {
+            min-width: 300px;
+        }
+
+        #fixed-thumb-size-demo {
+            width: 400px;
+            height: 200px;
+        }
+
+        /* Vertical and horizontal scrollbar - one extra step required - add width of overview - overall width of scrolled content*/
+        #fixed-thumb-size-demo .overview {
+            width: 600px;
+        }
+
+        /*No scrollbar needed*/
+        #no-scrollbar-needed {
+            max-height: 100px;
+            max-width: 400px;
+        }
+
+    </style>
 		<div class="container header-logo">
 			<div class="sidebar-right">
 				<form action="" method="" role="form">
@@ -67,7 +92,7 @@
 						<?php echo $map['html']; ?>
 					</div>
 				</div>
-				<div class="sidebar">
+				<div class="sidebar default-skin demo" id="vertical-horizontal-scrollbar-demo">
 					
 					<figure class=" col-md-12 team pull-left">
 						<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
@@ -98,7 +123,7 @@
 						</figcaption>
 					</figure>
 
-					<div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div>
+					
 
 					<figure class=" col-md-12 team pull-left">
 						<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
@@ -130,7 +155,7 @@
 						</figcaption>
 					</figure>
 
-					<div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div>
+					
 
 					<figure class=" col-md-12 team pull-left">
 						<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
@@ -162,7 +187,7 @@
 						</figcaption>
 					</figure>
 
-					<div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div>
+					
 
 					<figure class=" col-md-12 team pull-left">
 						<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
@@ -194,7 +219,7 @@
 						</figcaption>
 					</figure>
 
-					<div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div>
+					<!-- <div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div> -->
 
 					<figure class=" col-md-12 team pull-left">
 						<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
@@ -226,7 +251,7 @@
 						</figcaption>
 					</figure>
 
-					<div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div>
+					<!-- <div class="figure-dots pull-left"><i class="fa fa-ellipsis-h"></i></div> -->
 
 					<figure class=" col-md-12 team pull-left">
 						<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
@@ -269,9 +294,11 @@
 	
 	
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/javascript.fullPage.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.custom-scrollbar.js'); ?>"></script>
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
 	anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
@@ -282,4 +309,13 @@
 });
 </script>
 <script src="<?php echo base_url('assets/js/script.js'); ?>"></script>
+
+<script type="text/javascript">
+    $(window).load(function () {
+        $(".demo").customScrollbar();
+        $("#fixed-thumb-size-demo").customScrollbar({fixedThumbHeight: 50, fixedThumbWidth: 60});
+    });
+</script>
+
+</script>
 </html>
