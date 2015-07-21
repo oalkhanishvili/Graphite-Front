@@ -77,11 +77,7 @@ $('.fa-thumbs-up').click(function(){
     $(this).toggleClass('fa-thumbs-o-up');
   });
 
-$('.fa-bars').click(function(){
-  
-  $('.tab-content').fadeIn(4000);
 
-});
 
         
 
