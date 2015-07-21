@@ -33,8 +33,8 @@ $('.confirm-div').css({
 	<p><input type="text" name="user_id" placeholder="user id" value="2"></p>
 	<p><input type="text" name="title" placeholder="title"></p>
 	<p><textarea name="description"></textarea></p>
-	<p><input id="lat_id" type="text" name="longitude" placeholder="long" value></p>
-	<p><input id="lng_id" type="text" name="latitude" placeholder="latitude" value></p>
+	<p><input id="lat_id" type="text" name="latitude" placeholder="long" value></p>
+	<p><input id="lng_id" type="text" name="longitude" placeholder="latitude" value></p>
 	<p><input type="file" name="userfile" ></p>
 	<button type="submit">შენახვა</button>
 

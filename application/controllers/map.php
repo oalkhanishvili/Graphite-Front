@@ -76,6 +76,7 @@ class map extends CI_Controller{
 		redirect('map/insert_mark');
 		}
 		$config['zoom'] = '13';
+		$config['onclick'] = 'createMarker_map({draggable:true, map: map, position:event.latLng });alert(\'You just clicked at: \' + event.latLng.lat() + \', \' + event.latLng.lng());';
 		$this->googlemaps->initialize($config);
 		$marker['position'] = '41.699833, 44.803448';
 		$marker['draggable'] = true;
