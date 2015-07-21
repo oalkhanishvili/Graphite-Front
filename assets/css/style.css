@@ -91,6 +91,34 @@ figcaption p{
 	top: 5px;
 }
 
+.dinamic-tabs{
+
+}
+
+.nav-tabs{
+
+	  margin-bottom: 5px;
+	  border-bottom: 1px solid #A4C1DA;
+	  width: 360px;
+	  	
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover{
+	background: none;
+	border:none;
+	border-bottom: 4px solid #FF513F;
+	color:#FF513F;
+	width: 180px;
+}
+
+.nav-tabs>li>a{
+	border:none; 
+	width: 180px;
+	margin-right: 0px;	
+}
+
 legend{
 	border: none;
 }
@@ -396,8 +424,30 @@ canvas{
 	height: 100%;
 	background: #F1F1F1;
 	transition: all .8s;
+	/*border-right: 1px solid #FF513F;*/
+	
 }
 
+       
+#min-thumb-size-demo .horizontal .thumb {
+    min-width: 300px;
+}
+
+#fixed-thumb-size-demo {
+    width: 400px;
+    height: 200px;
+}
+
+/* Vertical and horizontal scrollbar - one extra step required - add width of overview - overall width of scrolled content*/
+#fixed-thumb-size-demo .overview {
+    width: 600px;
+}
+
+/*No scrollbar needed*/
+#no-scrollbar-needed {
+    max-height: 100px;
+    max-width: 400px;
+}
 
 .sidebar img{
 	float: left;
@@ -456,7 +506,7 @@ canvas{
 }
 
 
-.star-rating{
+.stars{
 	position: absolute;
 	right: 5px;
   	  top: 100px;
