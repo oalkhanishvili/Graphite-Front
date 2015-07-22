@@ -19,7 +19,7 @@ class map extends CI_Controller{
 			$marker = array();
 			$marker['position'] = $items['latitude'].','.$items['longitude'];
 			$html  = "<div class='marker'><h2>{$items['title']}</h1>";
-			$html .= "<p data-toggle='modal' data-target='#myModal'><img src=".base_url('img/'.$items['pic_name'])." height=150px></p>";
+			$html .= "<p data-toggle='modal' data-target='#myModal'><img src=".base_url('assets/img/'.$items['pic_name'])." height=150px></p>";
 			$html .= "<p>{$items['description']}</p></div>";
 			$html .= "<p ></p></div>";//a href=".site_url('map/detail_page/'.$items['id']).">დეტალური გვერდი</a>
 			$marker['infowindow_content'] = $html;
@@ -32,12 +32,49 @@ class map extends CI_Controller{
 			$this->googlemaps->add_marker($marker);
 
 		}
-
+		$result = $this->show_markers->select_user_wishlist();
 		$data['map'] = $this->googlemaps->create_map();
 
+		$this->load->library('facebook');
+		$user = $this->facebook->getUser();
+		if ($user) {
+            try {
+                $data['user_profile'] = $this->facebook->api('/me');
+                $id = $data['user_profile']['id'];
+                if ( !$this->show_markers->add_user($data['user_profile']['id']) == true ){
+	        	$data1 = array(
+	        	'name' => $data['user_profile']['name'],
+	        	'fb_id' => $data['user_profile']['id']
+	        	);
+	        	$this->db->insert('user', $data1);
+        }
+            } catch (FacebookApiException $e) {
+                $user = null;
+            }
+        }else {
+            $this->facebook->destroySession();
+        }
+        
+        
+        if ($user) {
+            $data['logout_url'] = site_url('map/logout');
+        } else {
+            $data['login_url'] = $this->facebook->getLoginUrl(array(
+                'redirect_uri' => site_url(''),
+                'scope' => array("email") // permissions here
+            ));
+        }
+
+		$data['wishlist'] = $result;
+		$data['result'] = $list;
 		$this->load->view('view_home', $data);
 
 	}
+	public function logout(){
+        $this->load->library('facebook');
+        $this->facebook->destroySession();
+        redirect('');
+    }
 	public function detail_page($id){
 		$this->load->model('show_markers');
 		$result = $this->show_markers->detail_page($id);
@@ -73,18 +110,16 @@ class map extends CI_Controller{
 			);
 		$this->load->model('show_markers');
 		$this->show_markers->insert_markers($data1);
+		$this->session->set_flashdata('success', 'წარმატებით აიტვირთა');
 		redirect('map/insert_mark');
 		}
 		$config['zoom'] = '13';
-		$config['onclick'] = 'createMarker_map({draggable:true, map: map, position:event.latLng });alert(\'You just clicked at: \' + event.latLng.lat() + \', \' + event.latLng.lng());';
+		$config['onclick'] = "placeMarker(event.latLng);$('#lat_id').val(event.latLng.lat()); $('#lng_id').val(event.latLng.lng());";
 		$this->googlemaps->initialize($config);
 		$marker['position'] = '41.699833, 44.803448';
-		$marker['draggable'] = true;
-		$marker['ondragend'] = "$('#lat_id').val(event.latLng.lat()); $('#lng_id').val(event.latLng.lng());";
-		$this->googlemaps->add_marker($marker);
+	
 		$data['map'] = $this->googlemaps->create_map();
 		$data['category'] = $this->show_markers->select_category();
-		$this->session->set_flashdata('success', 'წარმატებით აიტვირთა');
 		$this->load->view('insert_marker', $data);
 	}
 }

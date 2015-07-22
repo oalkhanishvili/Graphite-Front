@@ -16,23 +16,25 @@
 		
 		<div class="container header-logo">
 			<div class="sidebar-right">
-				<form action="" method="" role="form">
-					<legend class="pull-right"><i class='fa fa-close fa-md pull-right sign-close'></i></legend>
-					<div class="form-group sign-in-inputs">
-						<label for=""></label>
-						<input type="text" class="form-control" id="" placeholder="Username">
-						<label for=""></label>
-						<input type="text" class="form-control" id="" placeholder="Password">
-					</div>
-					<button id="submitaction" class="btn btn-sm btn-warning click-load" data-loading-text="&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-cog fa-spin'></i>&nbsp;&nbsp;&nbsp;&nbsp;" type="">Sign in</button>
-					
-				</form>
+			<?php if (@$user_profile):?>
+				<img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 140px; height: 140px;">
+                <h2><?=$user_profile['name']?></h2>
+				<a href="<?= $logout_url ?>" class="btn btn-lg btn-primary btn-block" role="button">Logout</a>
+				<?php else: ?>
+				<h2 class="form-signin-heading">Login with Facebook</h2>
+                <a href="<?= $login_url ?>" class="btn btn-lg btn-primary btn-block" role="button">Login</a>
+				<?php endif; ?>
 			</div>
 			<img src="<?php echo base_url('img/icons/logo.png'); ?>"  class="img-responsive pull-left" alt="Image">
 			<div class="pull-right registration">
+			<?php if (@$user_profile):?>
+				<a href="<?php echo site_url('map/insert_mark'); ?>"><button type="button" class="btn btn-sm btn-warning sign-up pull-right">ნახატის დამატება</button></a>
+				<p class="pull-right sign-in" ><img class="img-thumbnail" data-src="holder.js/40x40" alt="40x40" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 40px; height: 40px;"></p>
+				<?php else: ?>
 				<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
 				<span class="registartion-border pull-right ">&nbsp;</span>
 				<p class="pull-right sign-in" >Sign In</p>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -64,7 +66,9 @@
 		<div class="section" id="section1">
 			<div class="content">
 				<div class="map_container">
+				<?php if (@$user_profile):?>
 					<i class="fa fa-bars fa-2x"></i>
+				<?php endif; ?>
 					<div class="mapp">
 						<?php echo $map['html']; ?>
 					</div>
@@ -78,11 +82,12 @@
 						</ul>
 						<div class="tab-content">
 							<div id="my_graphs" class="tab-pane fade in active">
+							<?php foreach ( $result as $item ):?>
 								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
+									<img src="<?php echo base_url('assets/img/'.$item['pic_name']); ?>" class="img-responsive"  alt="">
 									<figcaption class="caption">
 									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩეანიოვიჩეანიოვიჩეანიოვიჩ</h4>
+										<h4></i><?php echo $item['title']; ?></h4>
 									</a>
 									<p>saburtalo, კოსტავას #24</p>
 									<div class='comment-icons'>
@@ -93,212 +98,25 @@
 									<div ><i class="fa fa-thumbs-o-up"></i></div>
 									</figcaption>
 								</figure>
-
-								
-
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/2.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/3.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/4.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/2.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/4.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/3.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/1.jpg'); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>
-									
-									<i class="fa fa-thumbs-o-up"></i>
-									</figcaption>
-								</figure>
+							<?php endforeach; ?>
 							</div>
-							
 							<div id="i_like_it" class="tab-pane fade">
+							<?php foreach ( $wishlist as $like ):?>
 								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/2.jpg'); ?>" class="img-responsive" alt="">
+									<img src="<?php echo base_url('assets/img/'.$like['pic_name']); ?>" class="img-responsive" alt="">
 									<figcaption class="caption">
 									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
+										<h4></i><?php echo $like['title']; ?></h4>
 									</a>
 									<p>saburtalo, კოსტავას #24</p>
 									<div class='comment-icons'>
 										<i class="fa fa-comment">15</i>
 										<i class="fa fa-eye">123</i>
-										
-									</div>
-									
+									</div>					
 									<i class="fa fa-thumbs-up"></i>
 									</figcaption>
 								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/3.jpg'); ?>" class="img-responsive" alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-										
-									</div>
-									
-									<i class="fa fa-thumbs-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/4.jpg'); ?>" class="img-responsive" alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-										
-									</div>
-									
-									<i class="fa fa-thumbs-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/3.jpg'); ?>" class="img-responsive" alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-										
-									</div>
-									
-									<i class="fa fa-thumbs-up"></i>
-									</figcaption>
-								</figure>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/2.jpg'); ?>" class="img-responsive" alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i>გიორგი ეანიოვიჩ</h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-										
-									</div>
-									
-									<i class="fa fa-thumbs-up"></i>
-									</figcaption>
-								</figure>
+							<?php endforeach; ?>
 							</div>
 							
 						</div>
@@ -323,6 +141,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/javascript.fullPage.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.custom-scrollbar.js'); ?>"></script>
+ <script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+<script id='fbop8ca'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=puneet.kay&button=compact&url=http%3A%2F%2Fpuneetk.com%2Ffacebook-php-codeigniter%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbop8ca');</script>
+
 <script type="text/javascript">
 	fullpage.initialize('#fullpage', {
 	anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],

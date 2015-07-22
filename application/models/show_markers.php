@@ -36,4 +36,28 @@ class show_markers extends CI_Model{
 		}
 		return $result;
 	}
+	public function select_user_wishlist(){
+		$this->db->select('*');
+		$this->db->where('wishlist.user_id', 2);
+		$this->db->from('wishlist');
+		$this->db->join('peaceofart', 'wishlist.peaceofart_id=peaceofart.id');
+		$query = $this->db->get();
+		if ( $query->num_rows() > 0 ){
+			foreach ( $query->result_array() as $row ){
+				$result[] = $row;
+			}
+			return $result;
+		}
+		return false;
+	}
+	public function add_user($id){
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where('fb_id', $id);
+		$query = $this->db->get();
+		if ( $query->num_rows()>0 ) {
+			return true;
+		}
+		return false;
+	}
 }

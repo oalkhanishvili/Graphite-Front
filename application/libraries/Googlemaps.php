@@ -2002,6 +2002,22 @@ class Googlemaps {
 		}
 		';
 		//
+		// add markers
+		$this->output_js_contents .= '
+		var pp;
+
+		function placeMarker(location) {
+		  if ( pp ) {
+		    pp.setPosition(location);
+		  } else {
+		    pp = new google.maps.Marker({
+		      position: location,
+		      map: map
+		    });
+		  }
+		}
+		';
+		//
 		
 		if ($this->directions) {
 			

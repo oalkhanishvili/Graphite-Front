@@ -355,7 +355,7 @@ div.marker img:hover{
 	
 }
 
-.header-logo img {
+.header-logo img.img-responsive pull-left {
     position :relative;
     -webkit-animation: mymove 3s; /* Chrome, Safari, Opera */ 
     animation: mymove 3s;
