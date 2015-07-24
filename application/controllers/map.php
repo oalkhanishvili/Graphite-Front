@@ -5,36 +5,37 @@ class map extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('googlemaps');
-
 		$config['center'] = '41.699833, 44.803448';
 		$config['zoom'] = 'auto';
 		$config['disableMapTypeControl'] = TRUE;
 		$this->googlemaps->initialize($config);
 		$this->load->model('show_markers');
 	}
+/*	Default Controller map
+	მთავარი გვერდი.გამომგვიტანს რუკას,მონიშნულ ადგილებს,სლაიდერს*/
 	public function index(){
 		$list = $this->show_markers->select_markers();
-
 		foreach ( $list as $items ){
 			$marker = array();
 			$marker['position'] = $items['latitude'].','.$items['longitude'];
 			$html  = "<div class='marker'><h2>{$items['title']}</h1>";
-			$html .= "<p data-toggle='modal' data-target='#myModal'><img src=".base_url('assets/img/'.$items['pic_name'])." height=150px></p>";
+			$html .= "<a href='#' data-class='modal' data-id='{$items['id']}' class='marker_id'>";
+			$html .= "<p data-toggle='modal' data-target='#myModal'>";
+			$html .= "<img src=".base_url('assets/img/'.$items['pic_name'])." height=150px></p></a>";
 			$html .= "<p>{$items['description']}</p></div>";
-			$html .= "<p ></p></div>";//a href=".site_url('map/detail_page/'.$items['id']).">დეტალური გვერდი</a>
+			$html .= "<p ></p></div>";
 			$marker['infowindow_content'] = $html;
-			if ( $items['category_id'] == 2 ){
-			$marker['icon'] = base_url('img/marker.png');
-			}
+				if ( $items['category_id'] == 2 ){
+				$marker['icon'] = base_url('img/marker.png');
+				}
 			$marker['animation'] = 'DROP';
 			$marker['draggable'] = FALSE;
-
 			$this->googlemaps->add_marker($marker);
-
 		}
 		$result = $this->show_markers->select_user_wishlist();
 		$data['map'] = $this->googlemaps->create_map();
 
+		// ვტვირთავთ facebook login ბიბლიოთეკას.და ვაკეთებთ ავტორიზაციას
 		$this->load->library('facebook');
 		$user = $this->facebook->getUser();
 		if ($user) {
@@ -54,8 +55,6 @@ class map extends CI_Controller{
         }else {
             $this->facebook->destroySession();
         }
-        
-        
         if ($user) {
             $data['logout_url'] = site_url('map/logout');
         } else {
@@ -64,25 +63,17 @@ class map extends CI_Controller{
                 'scope' => array("email") // permissions here
             ));
         }
-
 		$data['wishlist'] = $result;
 		$data['result'] = $list;
+		$this->load->view('header');
 		$this->load->view('view_home', $data);
-
+		$this->load->view('footer');
 	}
 	public function logout(){
         $this->load->library('facebook');
         $this->facebook->destroySession();
         redirect('');
     }
-	public function detail_page($id){
-		$this->load->model('show_markers');
-		$result = $this->show_markers->detail_page($id);
-
-		$data['detail_page'] = $result;
-		$data['map'] = $this->googlemaps->create_map();
-		$this->load->view('detail_page', $data);
-	}
 	public function insert_mark(){
 		$config['upload_path']          = './assets/img';
 		$config['allowed_types']        = 'gif|jpg|png';
@@ -120,6 +111,20 @@ class map extends CI_Controller{
 	
 		$data['map'] = $this->googlemaps->create_map();
 		$data['category'] = $this->show_markers->select_category();
+		$this->load->view('header');
 		$this->load->view('insert_marker', $data);
+		$this->load->view('footer');
+	}
+
+	/*დეტალური გვერდისთვის AJAX იღბს მონაცემებს და ისვრის უკან*/
+	public function detail_page(){
+		$title = $_POST['title'];
+		$result['ajax'] = $this->show_markers->select_detail_page($title);
+		echo json_encode($result['ajax']);
+	}
+	public function add_like(){
+		$data = $_POST['like'];
+		$id = array( 'user_id' => $_POST['user_id']);
+		echo $this->show_markers->add_like($data, $id);
 	}
 }

@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/javascript.fullPage.css'); ?>" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.custom-scrollbar.css'); ?>">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/fonts.css'); ?>">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
-		<?php echo $map['js']; ?>
-		<title>Document</title>
-	</head>
-	<body>
-		
-		<div class="container header-logo">
+<?php echo $map['js']; ?>
+<title>Document</title>
+</head>
+<body>
+<div class="container header-logo">
 			<div class="sidebar-right">
 			<?php if (@$user_profile):?>
 				<img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 140px; height: 140px;">
@@ -42,10 +30,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+						<h4 class="modal-title" id="myModalLabel"></h4>
 					</div>
 					<div class="modal-body">
-						<img src="<?php echo base_url('assets/img/4.jpg'); ?>" alt="">
+						<img id="img" src="<?php echo base_url('assets/img/'); ?>" alt="">
+						<div class="modal-description"></div>
+						<input type="button" class="button_like" id="linkeBtn" ></input>
 					</div>
 					
 				</div>
@@ -88,6 +78,7 @@
 									<figcaption class="caption">
 									<a href="" class="cap-link">
 										<h4></i><?php echo $item['title']; ?></h4>
+										<!-- <a href='#' data-id='<?php echo $item['id'];?>' class='marker_id'>fsaf</a> -->
 									</a>
 									<p>saburtalo, კოსტავას #24</p>
 									<div class='comment-icons'>
@@ -118,53 +109,9 @@
 								</figure>
 							<?php endforeach; ?>
 							</div>
-							
 						</div>
 					</div>
-					
-					
-					
-					
-					
-					
-					
 				</div>
-				
 			</div>
 		</div>
-		
 	</div>
-	
-	
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/javascript.fullPage.min.js'); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.custom-scrollbar.js'); ?>"></script>
- <script type="text/javascript">
-(function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/plusone.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
-<script id='fbop8ca'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=puneet.kay&button=compact&url=http%3A%2F%2Fpuneetk.com%2Ffacebook-php-codeigniter%2F';f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbop8ca');</script>
-
-<script type="text/javascript">
-	fullpage.initialize('#fullpage', {
-	anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-	menu: '#menu',
-	css3:true,
-	scrollingSpeed: 1000,
-	easing: 'easeInOutCubic',
-});
-</script>
-<script src="<?php echo base_url('assets/js/script.js'); ?>"></script>
-<script type="text/javascript">
-$(window).load(function () {
-$(".demo").customScrollbar();
-$("#fixed-thumb-size-demo").customScrollbar({fixedThumbHeight: 50, fixedThumbWidth: 60});
-});
-</script>
-</script>
-</html>
