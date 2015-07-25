@@ -76,8 +76,20 @@ $('.fa-thumbs-o-up').click(function(){
 $('.fa-thumbs-up').click(function(){
     $(this).toggleClass('fa-thumbs-o-up');
   });
+	
+//	$( '.fb-comment' ).click(function () {
+//  if ( $( ".comments" ).is( ":hidden" ) ) {
+//    $( "this" ).slideDown( "slow" );
+//  } else {
+//    $( "this" ).slideUp('fast');
+//  }
+//});
 
 
+//	$('.fb-comment').click(function(){
+//		$('.fa-angle-up').toggleClass('fa-angle-down');
+//		$('.comments').append();
+//	});
 
         
 
