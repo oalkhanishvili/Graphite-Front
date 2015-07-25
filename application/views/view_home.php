@@ -24,6 +24,12 @@
 				<p class="pull-right sign-in" >Sign In</p>
 				<?php endif; ?>
 			</div>
+
+			<ul id="menu">
+
+				<li data-menuanchor="firstPage"><a href="#firstPage" title="map"><i class="fa fa-angle-up fa-2x"></i></a></li>
+				<li data-menuanchor="secondPage"><a href="#secondPage"  title="first page"><i class="fa fa-angle-down fa-2x"></i></a></li>
+			</ul>
 		</div>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">
@@ -43,75 +49,85 @@
 		</div>
 		<div id="fullpage">
 			<div class="section" id="section0">
-				<div class="slide" id="slide1"></div>
-				<div class="slide" id="slide2"></div>
-				<div class="slide" id="slide3"></div>
-				<div class="slide" id="slide4"></div>
-				
-				<!-- <div class="content">
-					<img src="<?php //echo base_url('assets/img/img.jpg'); ?>" alt="">
-				</div>
-			</div> -->
-		</div>
-		<div class="section" id="section1">
-			<div class="content">
-				<div class="map_container">
-				<?php if (@$user_profile):?>
-					<i class="fa fa-bars fa-2x"></i>
-				<?php endif; ?>
-					<div class="mapp">
-						<?php echo $map['html']; ?>
+				<div class="slide" id="slide1">
+					<div class="content">
+						<h1>Normal scrolling</h1>
+						<p>With a linked menu</p>
 					</div>
 				</div>
-				<div class="sidebar default-skin demo" id="vertical-horizontal-scrollbar-demo">
-					<div class="dinamic-tabs">
-						<ul class="nav nav-tabs">
-							<li class="active"><a data-toggle="tab" href="#my_graphs">My graphs</a></li>
-							<li><a data-toggle="tab" href="#i_like_it">I like it</a></li>
-							<div id="nav-marker"></div>
-						</ul>
-						<div class="tab-content">
-							<div id="my_graphs" class="tab-pane fade in active">
-							<?php foreach ( $result as $item ):?>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/'.$item['pic_name']); ?>" class="img-responsive"  alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i><?php echo $item['title']; ?></h4>
-										<!-- <a href='#' data-id='<?php echo $item['id'];?>' class='marker_id'>fsaf</a> -->
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>										
-									</div>
-									
-									<div ><i class="fa fa-thumbs-o-up"></i></div>
-									</figcaption>
-								</figure>
-							<?php endforeach; ?>
-							</div>
-							<div id="i_like_it" class="tab-pane fade">
-							<?php foreach ( $wishlist as $like ):?>
-								<figure class=" col-md-12 team pull-left">
-									<img src="<?php echo base_url('assets/img/'.$like['pic_name']); ?>" class="img-responsive" alt="">
-									<figcaption class="caption">
-									<a href="" class="cap-link">
-										<h4></i><?php echo $like['title']; ?></h4>
-									</a>
-									<p>saburtalo, კოსტავას #24</p>
-									<div class='comment-icons'>
-										<i class="fa fa-comment">15</i>
-										<i class="fa fa-eye">123</i>
-									</div>					
-									<i class="fa fa-thumbs-up"></i>
-									</figcaption>
-								</figure>
-							<?php endforeach; ?>
+
+				<div class="slide" id="slide2">
+					<div class="content">
+						<h1>Normal scrolling</h1>
+						<p>With a linked menu</p>
+					</div>
+				</div>
+				<div class="slide" id="slide2">
+					<div class="content">
+						<h1>Normal scrolling</h1>
+						<p>With a linked menu</p>
+					</div>
+				</div>
+			</div>		
+			<div class="section" id="section1">
+				<div class="content">
+					<div class="map_container">
+					<?php if (@$user_profile):?>
+						<i class="fa fa-bars fa-2x"></i>
+					<?php endif; ?>
+						<div class="mapp">
+							<?php echo $map['html']; ?>
+						</div>
+					</div>
+					<div class="sidebar default-skin demo" id="vertical-horizontal-scrollbar-demo">
+						<div class="dinamic-tabs">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#my_graphs">My graphs</a></li>
+								<li><a data-toggle="tab" href="#i_like_it">I like it</a></li>
+								<div id="nav-marker"></div>
+							</ul>
+							<div class="tab-content">
+								<div id="my_graphs" class="tab-pane fade in active">
+								<?php foreach ( $result as $item ):?>
+									<figure class=" col-md-12 team pull-left">
+										<img src="<?php echo base_url('assets/img/'.$item['pic_name']); ?>" class="img-responsive"  alt="">
+										<figcaption class="caption">
+										<a href="" class="cap-link">
+											<h4></i><?php echo $item['title']; ?></h4>
+											<!-- <a href='#' data-id='<?php echo $item['id'];?>' class='marker_id'>fsaf</a> -->
+										</a>
+										<p>saburtalo, კოსტავას #24</p>
+										<div class='comment-icons'>
+											<i class="fa fa-comment">15</i>
+											<i class="fa fa-eye">123</i>										
+										</div>
+										
+										<div ><i class="fa fa-thumbs-o-up"></i></div>
+										</figcaption>
+									</figure>
+								<?php endforeach; ?>
+								</div>
+								<div id="i_like_it" class="tab-pane fade">
+								<?php foreach ( $wishlist as $like ):?>
+									<figure class=" col-md-12 team pull-left">
+										<img src="<?php echo base_url('assets/img/'.$like['pic_name']); ?>" class="img-responsive" alt="">
+										<figcaption class="caption">
+										<a href="" class="cap-link">
+											<h4></i><?php echo $like['title']; ?></h4>
+										</a>
+										<p>saburtalo, კოსტავას #24</p>
+										<div class='comment-icons'>
+											<i class="fa fa-comment">15</i>
+											<i class="fa fa-eye">123</i>
+										</div>					
+										<i class="fa fa-thumbs-up"></i>
+										</figcaption>
+									</figure>
+								<?php endforeach; ?>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
