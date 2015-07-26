@@ -15,7 +15,7 @@ $(document).ready(function(){
     });
 
     /* rif=ght sidebar animation*/
-  
+
     $('.sign-in').click(function(){
       $('.registration').toggleClass('reg-slide');
       $('.sidebar-right').toggleClass('sidebar-right-open');
@@ -39,14 +39,14 @@ $(document).ready(function(){
         $('.sidebar-right, .registration').removeClass('sidebar-right-open reg-slide');
     }, 3000);
       // Then whatever you actually want to do i.e. submit form
-      
+
 
     // After that has finished, reset the button state using
     setTimeout(function () {
         $btn.button('reset');
     }, 3000);
 });
-   
+
    /*burger sidebar left*/
    $('.fa-bars').click(function(){
       $(this).toggleClass('menu-open');
@@ -54,19 +54,13 @@ $(document).ready(function(){
    		$('.sidebar').toggleClass('sidebar-open');
    });
 
- 
-/* end dont works */
-     
- /*sidebar*/
-
-  //nav
 
 
 //nav border slice
-$('.nav-tabs li').click( function() { 
+$('.nav-tabs li').click( function() {
     var left = $(this).offset().left;
     $('#nav-marker').stop().animate( {  left: left  }, 800 );
-    
+
 });
 
 $('.fa-thumbs-o-up').click(function(){
@@ -76,7 +70,7 @@ $('.fa-thumbs-o-up').click(function(){
 $('.fa-thumbs-up').click(function(){
     $(this).toggleClass('fa-thumbs-o-up');
   });
-	
+
 //	$( '.fb-comment' ).click(function () {
 //  if ( $( ".comments" ).is( ":hidden" ) ) {
 //    $( "this" ).slideDown( "slow" );
@@ -91,8 +85,7 @@ $('.fa-thumbs-up').click(function(){
 //		$('.comments').append();
 //	});
 
-        
+
 
 
 });//end body
-

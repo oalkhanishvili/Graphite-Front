@@ -10,7 +10,7 @@ button{
 }
 
 #fullpage{
-	
+
 }
 
 
@@ -44,7 +44,7 @@ figure{
   padding: 0 0 !important;
   height: 90px;
   margin-bottom: 80px;
-  
+
 
 }
 
@@ -69,12 +69,12 @@ figcaption{
 	text-align:left;
 	float: right;
 	  margin-left: 12px;
-	
+
 }
 
 figcaption h4{
 	margin-top: 6px;
-  	
+
   	margin-bottom: 0px;
   	font-size:14px;
 }
@@ -88,11 +88,11 @@ figcaption p{
 	color:#595959;
 	font-size: 12px !important;
 
-	
+
 }
 
 {
- 
+
 }
 
 
@@ -108,7 +108,7 @@ figcaption p{
 	position: absolute;
 	color:rgb(0,0,0, 0.7);
 	top: 98px;
-	
+
   	right: 10px;
   	font-size:19px !important;
   	cursor: pointer;
@@ -119,18 +119,18 @@ figcaption p{
 .fa-thumbs-up{
 	position: absolute;
 	color:#176CED;
-	
+
 	top: 98px;
   	right: 10px;
   	font-size:19px !important;
   	cursor: pointer;
-	
+
 
 }
 
 .tab-content{
 	position: relative;
-	
+
 }
 
 
@@ -154,46 +154,46 @@ figcaption p{
 }
 
 .img-responsive{
-	
+
 }
 
 .nav-tabs{
 	position: fixed;
 	top:120px;
-	  
+
 	  border-bottom: 0px solid #A4C1DA;
 	  width: 360px;
 	  border-bottom: 1px solid #ccc
-	  	
+
 }
 
 .like{
 	content: "\f164";
 }
 
-#nav-marker { 
-	position: fixed; 
-	display: block;   
+#nav-marker {
+	position: fixed;
+	display: block;
 	height: 39px;
 	width: 180px;
-	border-bottom: 4px solid #C81835; 
+	border-bottom: 4px solid #C81835;
 }
 
 #figure-line{
 	height: 146px;
 	border-bottom: 1px solid rgba(48, 48, 48, 0.1);
 	width: 50px;
-	margin-left: 170px;	
+	margin-left: 170px;
 }
 
-.nav-tabs>li.active>a, 
-.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover{
 	background: none;
 	border:none;
 	/*border-bottom: 4px solid #FF513F;*/
 	padding-bottom: 5px;
-	
+
 }
 
 .nav-tabs>li a:hover{
@@ -205,7 +205,7 @@ figcaption p{
 }
 
 .nav-tabs>li>a{
-	border:none; 
+	border:none;
 	width: 180px;
 	margin-right: 0px;
 
@@ -233,7 +233,7 @@ div.marker img:hover{
 
 .container-fluid{
 	padding: 0;
-	overflow-y:hidden; 
+	overflow-y:hidden;
 
 
 }
@@ -244,12 +244,12 @@ div.marker img:hover{
 
 .carousel-inner img{
 	width: 100%;
-	height:644px;	
+	height:644px;
 }
 
 .carousel{
 	margin-top: 0 !important;
-	
+
 }
 
 
@@ -277,7 +277,7 @@ div.marker img:hover{
 
 }
  /* --------------------------------------- */
-		
+
 		.content{
 			position: relative;
 			top: 50%;
@@ -361,27 +361,27 @@ div.marker img:hover{
 	width: 100%;
 	background: rgba(0,0,0,0.3);
 	height: 42px;
-	
+
 
 }
 
 .header-logo img{
 	width: 27px;
 	margin: 2px;
-	
+
 }
 
 .header-logo img.img-responsive pull-left {
     position :relative;
-    -webkit-animation: mymove 3s; /* Chrome, Safari, Opera */ 
+    -webkit-animation: mymove 3s; /* Chrome, Safari, Opera */
     animation: mymove 3s;
 }
 
-/* Chrome, Safari, Opera */ 
+/* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
     from  {top: 0px;}
     to {top: 200px;}
-   
+
 }
 
 /* Standard syntax */
@@ -429,7 +429,7 @@ div.marker img:hover{
 	height: 30px;
 	background: none;
 	background-repeat: no-repeat;
-	width: auto; 
+	width: auto;
 	border-radius: 0;
 	color:#fff;
 	border: none;
@@ -472,7 +472,7 @@ div.marker img:hover{
 }
 
 .fa-bars{
-	color: #000;	
+	color: #000;
 	position: fixed;
 	z-index: 111;
 	left:-7px;
@@ -509,7 +509,7 @@ canvas{
 */
 
 #map_canvas{
-	
+
 }
 
 canvas{
@@ -532,7 +532,7 @@ canvas{
 
 }
 
-       
+
 #min-thumb-size-demo .horizontal .thumb {
     min-width: 300px;
 }
@@ -560,7 +560,7 @@ canvas{
 	margin-right: 7px;	}
 
 .marker{
-	
+
 }
 
 .marker img{
@@ -572,7 +572,7 @@ canvas{
 	width: 670px;
 	height: 406px;
 	margin-top: 50px;
- 
+
 
 }
 
@@ -598,7 +598,8 @@ canvas{
 
 
 .modal-body img{
-	width: 450px;
+  width: 450px;
+  height: 310px;
 	position: absolute;
 	padding: 3px;
 	top: 50px;
@@ -631,7 +632,7 @@ canvas{
 	cursor: pointer;
  	-webkit-transition: all 0.5s;
  	        transition: all 0.5s;
- 
+
 }
 
 .comments{
@@ -671,7 +672,7 @@ canvas{
 	position: absolute;
 	right: 5px;
   	  top: 100px;
-	
+
 }
 
 .comment-icons{
@@ -809,7 +810,7 @@ canvas{
             transition:all 0.5s;
 }
 #menu li.active{
-	
+
 	color: #fff;
 }
 #menu li a{
@@ -835,7 +836,7 @@ canvas{
 	top:0px;
 	left:120px;
 	height: 40px;
-	
+
 	width: 100%;
 	padding: 0;
 	margin:0;
@@ -967,6 +968,3 @@ canvas{
 	right:10px;
 	z-index: 999;
  }
-
-
-
