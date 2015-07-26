@@ -9,9 +9,9 @@ $(document).ready(function(){
 
     /* bar slide on hover*/
     $(".fa-bars").hover(function(event){
-    	$(this).stop().animate({'left':'5px'}, 200)
+    	$(this).stop().animate({'left':'5px'}, 200);
     }, function(){
-    	$(this).stop().animate({'left':'-7px'}, 200)
+    	$(this).stop().animate({'left':'-7px'}, 200);
     });
 
     /* rif=ght sidebar animation*/
@@ -79,13 +79,18 @@ $('.fa-thumbs-up').click(function(){
 //  }
 //});
 
-
+$('.glyphicon-chevron-up').click(function(){
+  $(this).toggleClass('glyphicon-chevron-down');
+  $('.comments').stop().slideToggle(500);
+});
 //	$('.fb-comment').click(function(){
 //		$('.fa-angle-up').toggleClass('fa-angle-down');
 //		$('.comments').append();
 //	});
 
 
-
+$(function () {
+$('[data-toggle="tooltip"]').tooltip();
+});
 
 });//end body

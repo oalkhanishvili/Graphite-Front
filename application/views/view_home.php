@@ -37,39 +37,70 @@
 				</li>
 			</ul>
 		</div>
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel"></h4>
-					</div>
-					<div class="modal-body">
-						<img id="img" src="<?php echo base_url('assets/img/1.jpg'); ?>" alt="">
-						<div class="modal-like"><span>like</span></div> 	
-						<div class="modal-description">
-										
+		<div id="gridSystemModal" class="modal fade"  role="dialog" aria-labelledby="gridModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">	<img src="<?php echo base_url('img/123.jpg'); ?>" class="img-responsive pull-left" alt="Image"></div>
+            <div class="col-md-4 description">
+							<button type="button" name="button" class="btn btn-success btn-sm pull-right">like</button>
+						<br><br>
+							<h4 class="pull-right">გიორგი ბერიძე</h4>
+							<p class="pull-right">
+								<span class="glyphicon glyphicon-comment">27</span>
+								<span class="glyphicon glyphicon-eye-open">578</span>
+							</p>
 						</div>
-						<!--						<input type="button" class="button_like" id="linkeBtn" ></input>-->
-						<div class='modal-comment-icons'>
-							 <i class="fa fa-comment">15</i>
-							 <i class="fa fa-eye">154</i>
-						 </div>
-						
-					</div>
-					<div class="fb-comment" id="vertical-horizontal-scrollbar-demo">
-						<i class="fa fa-angle-up fa-3x modal-arrow-down"></i>
-					</div>
-					<div class="comments">
-						<p>container</p>
-						<p>container</p>
-						<p>container</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+				<div class="row">
+					<div class="col-sm-12">
+						<span class="glyphicon glyphicon-chevron-up"  data-toggle="tooltip" data-placement="left" title="Comments"></span>
+						<div class="comments">
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+							<p>
+								facebook comments
+							</p>
+
+						</div>
 					</div>
 				</div>
-				
-			</div>
-		</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 		<div id="fullpage">
 			<div class="section" id="section0">
 				<div class="slide" id="slide1">

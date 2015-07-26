@@ -20,7 +20,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 	scrollingSpeed: 1000,
 	easing: 'easeInOutCubic',
 });
-// 
+//
 $(document).on('click','[data-class="modal"]',function(e){
 	e.preventDefault();  // stops the jump when an anchor clicked.
 	var title = $(this).attr('data-id'); // anchors do have text not values.

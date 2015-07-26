@@ -13,6 +13,10 @@ button{
 
 }
 
+h3{
+  font-family: bpgarial;
+}
+
 
 p{
 	font-family: BPGArial;
@@ -57,6 +61,10 @@ figure:last-child{
 	  color:rgba(0,0,0,0.3);
 }
 
+.row{
+  padding: 0;
+  margin: 0;
+}
 
 
 figure img{
@@ -227,6 +235,42 @@ div.marker img{
 }
 div.marker img:hover{
     opacity:1;
+}
+
+.modal-content{
+      margin-top: 70px;
+}
+
+.modal-body{
+  padding: 15px 0;
+  margin: -12px -15px;
+}
+
+.description{
+    margin-left: -9px;
+}
+
+.modal-footer{
+  float: none;
+  text-align: center;
+}
+
+.glyphicon-comment, .glyphicon-eye-open{
+
+}
+
+.modal-footer .glyphicon-chevron-up{
+  /* height: 22px; */
+  font-size: 20px;
+  cursor: pointer;
+  color: #ff513f;
+}
+
+.comments{
+  overflow-y: scroll;
+  display: none;
+  height: 120px;
+  text-align: left;
 }
 
 
@@ -568,84 +612,6 @@ canvas{
 	margin: 0px;
 }
 
-.modal-content{
-	width: 670px;
-	height: 406px;
-	margin-top: 50px;
-
-
-}
-
-.close{
- position: absolute;
- right: 0;
-}
-
-.modal-header{
- position: absolute;
-	padding: 8px;
-	border: none;
-}
-
-
-
-.modal-body{
-	position: relative;
-	margin: 0;
-	padding: 0px;
-	width: 670px;
-}
-
-
-.modal-body img{
-  width: 450px;
-  height: 310px;
-	position: absolute;
-	padding: 3px;
-	top: 50px;
-}
-
-.modal-description{
- right:5px;
- position: absolute;
- top: 70px;
-}
-
-.modal-comment-icons{
- position: absolute;
- right: 5px;
- top:90px;
-}
-
-.fb-comment{
- width: 100%;
- height: 50px;
- border: 0px solid #ccc;
- position: absolute;
- bottom:0;
- box-sizing: border-box;
- text-align: center;
-
-}
-
-.fa-angle-up{
-	cursor: pointer;
- 	-webkit-transition: all 0.5s;
- 	        transition: all 0.5s;
-
-}
-
-.comments{
- position: absolute;
- bottom:0;
- display: none;
-}
-
-.modal-like{
- position: absolute;
- right: 5px;
- top:50px;
-}
 
 
 .modal.fade .modal-dialog {
