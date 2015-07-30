@@ -269,7 +269,7 @@ div.marker img:hover{
 .comments{
   overflow-y: scroll;
   display: none;
-  height: 120px;
+  height: 400px;
   text-align: left;
 }
 

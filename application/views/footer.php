@@ -45,6 +45,7 @@ $(document).on('click','[data-class="modal"]',function(e){
 		$('#img').attr('src', newname);
 		}
 	});
+	
 });
 $(document).on('click', '.button_like', function(e){
 	e.preventDefault();
