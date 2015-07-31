@@ -17,7 +17,7 @@
 			<div class="pull-right registration">
 			<?php if (@$user_profile):?>
 				<a href="<?php echo site_url('map/insert_mark'); ?>"><button type="button" class="btn btn-sm btn-warning sign-up pull-right">ნახატის დამატება</button></a>
-				<p class="pull-right sign-in" ><img class="img-thumbnail" data-src="holder.js/40x40" alt="40x40" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 40px; height: 40px;"></p>
+				<p class="pull-right sign-in" ><img class="img-thumbnail" data-src="holder.js/30x30" alt="40x40" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 30px; height: 30px;"></p>
 				<?php else: ?>
 				<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
 				<span class="registartion-border pull-right ">&nbsp;</span>
