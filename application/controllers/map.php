@@ -20,7 +20,7 @@ class map extends CI_Controller{
 			$marker['position'] = $items['latitude'].','.$items['longitude'];
 			$html  = "<div class='marker'><h2>{$items['title']}</h1>";
 			$html .= "<a href='#' data-class='modal' data-id='{$items['id']}' class='marker_id'>";
-			$html .= "<p data-toggle='modal' data-target='#myModal'>";
+			$html .= "<p data-toggle='modal' data-target='#gridSystemModal'>";
 			$html .= "<img src=".base_url('assets/img/'.$items['pic_name'])." height=150px></p></a>";
 			$html .= "<p>{$items['description']}</p></div>";
 			$html .= "<p ></p></div>";
@@ -108,7 +108,7 @@ class map extends CI_Controller{
 		$config['onclick'] = "placeMarker(event.latLng);$('#lat_id').val(event.latLng.lat()); $('#lng_id').val(event.latLng.lng());";
 		$this->googlemaps->initialize($config);
 		$marker['position'] = '41.699833, 44.803448';
-	
+
 		$data['map'] = $this->googlemaps->create_map();
 		$data['category'] = $this->show_markers->select_category();
 		$this->load->view('header');
