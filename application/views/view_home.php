@@ -52,11 +52,11 @@
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8">	<img src="<?php echo base_url('img/123.jpg'); ?>" class="img-responsive pull-left" alt="Image"></div>
+            <div class="col-md-8">	<img id="img" src="<?php echo base_url('assets/img/'); ?>" class="img-responsive pull-left" alt="Image"></div>
             <div class="col-md-4 description">
-							<button type="button" name="button" class="btn btn-success btn-sm pull-right">like</button>
+							<button type="button" id="button_like" name="button" class="btn btn-success btn-sm pull-right"></button>
 						<br><br>
-							<h4 class="pull-right">გიორგი ბერიძე</h4>
+							<h4 class="pull-right" id="myModalLabel"></h4>
 							<p class="pull-right">
 								<span class="glyphicon glyphicon-comment">27</span>
 								<span class="glyphicon glyphicon-eye-open">578</span>

@@ -243,15 +243,23 @@
 			"file": "controllers/map.php",
 			"settings":
 			{
-				"buffer_size": 3540,
+				"buffer_size": 4889,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "models/show_markers.php",
+			"file": "/D/xampp/htdocs/Graphite-Front/assets/css/style.css",
 			"settings":
 			{
-				"buffer_size": 1286,
+				"buffer_size": 13207,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/view_home.php",
+			"settings":
+			{
+				"buffer_size": 6919,
 				"line_ending": "Windows"
 			}
 		},
@@ -264,10 +272,50 @@
 			}
 		},
 		{
-			"file": "views/view_home.php",
+			"file": "views/footer.php",
 			"settings":
 			{
-				"buffer_size": 5909,
+				"buffer_size": 2748,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/amanatebi/images/logo.svg",
+			"settings":
+			{
+				"buffer_size": 1506,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/header.php",
+			"settings":
+			{
+				"buffer_size": 709,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "models/show_markers.php",
+			"settings":
+			{
+				"buffer_size": 3098,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/login.php",
+			"settings":
+			{
+				"buffer_size": 4248,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "libraries/Googlemaps.php",
+			"settings":
+			{
+				"buffer_size": 90644,
 				"line_ending": "Windows"
 			}
 		}
@@ -348,12 +396,29 @@
 		"/D/xampp/htdocs/Graphite-Front/application",
 		"/D/xampp/htdocs/Graphite-Front/application/config",
 		"/D/xampp/htdocs/Graphite-Front/application/controllers",
-		"/D/xampp/htdocs/Graphite-Front/application/libraries",
-		"/D/xampp/htdocs/Graphite-Front/application/models",
 		"/D/xampp/htdocs/Graphite-Front/application/views"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/amanatebi/images/logo.svg",
+		"/D/xampp/htdocs/Graphite-Front/application/views/test.php",
+		"/D/xampp/htdocs/amanatebi/js/my_script.js",
+		"/D/xampp/htdocs/Graphite-Front/application/views/insert_marker.php",
+		"/D/xampp/htdocs/Graphite-Front/application/libraries/facebook.php",
+		"/D/xampp/htdocs/Graphite-Front/application/controllers/Welcome.php",
+		"/D/xampp/htdocs/test/tbcpay/tbcpay.lib.php",
+		"/D/xampp/htdocs/test/tbcpay/start.php",
+		"/D/xampp/htdocs/test/tbcpay/ok.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/fail.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/start.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/tbcpay.lib.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/ok.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/cert/.htaccess",
+		"/D/xampp/htdocs/test/cs.bc.ecomm_merchant-1.1.15-java1.6-(MH1+ALL_t6j16_web)/examples/testecomm_ok.html",
+		"/D/xampp/htdocs/test/cs.bc.ecomm_merchant-1.1.15-java1.6-(MH1+ALL_t6j16_web)/examples/shop_sendorder.php",
+		"/D/xampp/htdocs/test/cs.bc.ecomm_merchant-1.1.15-java1.6-(MH1+ALL_t6j16_web)/examples/cardinfo.html",
+		"/D/xampp/htdocs/Graphite-Front/application/config/facebook.php",
+		"/D/xampp/htdocs/Graphite-Front/Facebook-PHP-CodeIgniter-master/views/login.php",
 		"/D/xampp/htdocs/Graphite-Front/.htaccess",
 		"/D/xampp/htdocs/Graphite-Front/application/libraries/Googlemaps.php",
 		"/D/xampp/htdocs/Graphite-Front/application/libraries/Jsmin.php",
@@ -392,7 +457,6 @@
 		"/D/xampp/htdocs/amanatebi/application/views/pages/reisebi.php",
 		"/D/xampp/htdocs/amanatebi/application/models/page_model.php",
 		"/D/xampp/htdocs/amanatebi/application/views/pages/section.php",
-		"/D/xampp/htdocs/amanatebi/js/my_script.js",
 		"/D/xampp/htdocs/amanatebi/random-login-form/index.html",
 		"/D/xampp/htdocs/amanatebi/login/index.html",
 		"/D/xampp/htdocs/amanatebi/application/views/manager/login-form.php",
@@ -463,29 +527,11 @@
 		"/D/xampp/htdocs/geolab/html/index.html",
 		"/D/xampp/htdocs/geolab/layout/header.php",
 		"/D/xampp/htdocs/geolab/html/new_cal/index.html",
-		"/D/xampp/htdocs/geolab/js/myscript.js",
-		"/D/xampp/htdocs/geolab/calendar/index.html",
-		"/D/xampp/htdocs/code/application/models/User_mode.php",
-		"/D/xampp/htdocs/geolab/layout/footer.php",
-		"/D/xampp/htdocs/saswavlo/dbh.php",
-		"/D/xampp/htdocs/geolab/admin/inc/dbh.php",
-		"/D/xampp/htdocs/geolab/admin/addoncal.php",
-		"/D/xampp/htdocs/geolab/admin/inc/calinsert.php",
-		"/D/xampp/htdocs/geolab/functions/calendar_date.php",
-		"/D/xampp/htdocs/saswavlo/option.class.php",
-		"/D/xampp/htdocs/saswavlo/index2.php",
-		"/D/xampp/htdocs/saswavlo/select2.php",
-		"/D/xampp/htdocs/saswavlo/question.class.php",
-		"/D/xampp/htdocs/track1/classes/class.php",
-		"/D/xampp/htdocs/track/templates/default/default.php",
-		"/D/xampp/htdocs/track/templates/default/shortstory.tpl",
-		"/D/xampp/htdocs/geolab/layout/style/style.css",
-		"/D/xampp/htdocs/geolab/include/dbh.php",
-		"/D/xampp/htdocs/geolab/index2.php"
+		"/D/xampp/htdocs/geolab/js/myscript.js"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -500,6 +546,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<<<",
+			"img",
+			"data-class=\"modal\"",
+			"detail_page",
+			"myModalLabel",
+			"modal-content",
+			"parse_result",
+			"trans_id",
+			"dir",
+			"დირ",
+			"getLoginUrl",
+			"header-logo img",
+			"onclick",
+			"placemarker",
+			"pp",
+			"createMarker",
+			"createMarker_map",
+			"createMarker_",
 			"createMarker_map",
 			"position",
 			"createMarker_map",
@@ -627,7 +691,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -636,25 +700,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3540,
+						"buffer_size": 4889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1308,
-								1308
-							],
-							[
-								1325,
-								1328
+								4388,
+								4388
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"function_name_status_row": 36,
+							"function_name_status_row": 112,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -662,50 +722,82 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 756.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "models/show_markers.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1286,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								889,
-								871
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"function_name_status_row": 35,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 975.0,
+						"translation.y": 1323.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "views/insert_marker.php",
+					"buffer": 1,
+					"file": "/D/xampp/htdocs/Graphite-Front/assets/css/style.css",
 					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9080,
+								9080
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 12252.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/view_home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6919,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1225,
+								1225
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 26,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1806.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/insert_marker.php",
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 1329,
@@ -715,14 +807,13 @@
 						"selection":
 						[
 							[
-								777,
-								777
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"function_name_status_row": 28,
+							"function_name_status_row": 0,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -730,44 +821,214 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 835.0,
+						"translation.y": 441.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "views/view_home.php",
+					"buffer": 4,
+					"file": "views/footer.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5909,
+						"buffer_size": 2748,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4504,
-								4504
+								2226,
+								2226
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"function_name_status_row": 105,
+							"function_name_status_row": 51,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 265.0,
-						"translation.y": 2548.0,
+						"translation.x": 0.0,
+						"translation.y": 957.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/xampp/htdocs/amanatebi/images/logo.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1506,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 11,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "views/header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								633,
+								633
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 9,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "models/show_markers.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3098,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2103,
+								2114
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 80,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2025.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "views/login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1144,
+								1144
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 41,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 892.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "libraries/Googlemaps.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 1949,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 47838.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -775,7 +1036,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -816,7 +1077,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 52.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -858,7 +1119,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 188.0,
+	"side_bar_width": 225.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
