@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class map extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
+
 		$this->load->library('googlemaps');
 		$config['center'] = '41.699833, 44.803448';
 		$config['zoom'] = 'auto';
@@ -124,7 +125,7 @@ class map extends CI_Controller{
 	}
 	public function add_like(){
 		$data = $_POST['like'];
-		$id = array( 'user_id' => $_POST['user_id']);
+		$id = array( 'marker_id' => $_POST['marker_id'], 'user_id' => $_SESSION['fb_801390733309537_user_id']);
 		echo $this->show_markers->add_like($data, $id);
 	}
 }

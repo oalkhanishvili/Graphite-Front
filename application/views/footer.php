@@ -49,13 +49,14 @@ $(document).on('click','[data-class="modal"]',function(e){
 });
 $(document).on('click', '#button_like', function(e){
 	e.preventDefault();
-	var like = parseInt($('#button_like').val(),10);
+	var like = parseInt($('#button_like').text(),10);
 	var id = $('[data-class="modal"]').attr('data-id');
 	console.log(id);
 	like=like+1;
-	$.post('map/add_like', {'like':like,'user_id':id} ,function(resp){
+	$.post('map/add_like', {'like':like,'marker_id':id} ,function(resp){
 		if (resp == 'ok'){
-		$('#button_like').attr('value',like);
+		$('#button_like').text(like);
+		console.log('ok');
 		}
 	});
 });

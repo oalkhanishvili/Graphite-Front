@@ -12,6 +12,7 @@ class show_markers extends CI_Model{
 	public function select_markers(){
 		$this->db->select('*');
 		$this->db->from('peaceofart');
+		$this->db->where('user_id',$_SESSION['fb_801390733309537_user_id']);
 		$query = $this->db->get();
 
 		foreach ( $query->result_array() as $row ){
@@ -47,9 +48,9 @@ class show_markers extends CI_Model{
 	 */
 	public function select_user_wishlist(){
 		$this->db->select('*');
-		$this->db->where('wishlist.user_id', 2);
-		$this->db->from('wishlist');
-		$this->db->join('peaceofart', 'wishlist.peaceofart_id=peaceofart.id');
+		$this->db->where('like.user_id', $_SESSION['fb_801390733309537_user_id']);
+		$this->db->from('like');
+		$this->db->join('peaceofart', 'like.marker_id=peaceofart.id');
 		$query = $this->db->get();
 		if ( $query->num_rows() > 0 ){
 			foreach ( $query->result_array() as $row ){
@@ -100,14 +101,15 @@ class show_markers extends CI_Model{
 		//ვამოწმებთ აქვს თუ არა მოწონებული
 		$this->db->select('user_id');
 		$this->db->from('like');
-		$this->db->where('marker_id', 4);
+		$this->db->where('marker_id', $id['marker_id']);
+		$this->db->where('user_id', $_SESSION['fb_801390733309537_user_id']);
 		$query = $this->db->get();
 		// თუ ჩანაწერი მოიძებნა return false
 		if ( $query->num_rows() > 0 ){
 			return false;
 		//თუ ჩანაწერი არ მოიძებნა მაშინ გავაკეთოთ ჩანაწერები
 		}else{
-			$this->db->where('id', 4);
+			$this->db->where('id', $id['marker_id']);
 			$this->db->set('like', $data);
 			$this->db->update('peaceofart');
 
