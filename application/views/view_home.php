@@ -24,17 +24,14 @@
 			</div>
 			<img src="<?php echo base_url('img/icons/logo.png'); ?>" class="img-responsive pull-left" alt="Image">
 			<div class="pull-right registration">
-				<?php if (@$user_profile):?>
-					<a href="<?php echo site_url('map/insert_mark'); ?>">
-						<button type="button" class="btn btn-sm btn-warning sign-up pull-right">ნახატის დამატება</button>
-					</a>
-					<p class="pull-right sign-in"><img class="img-thumbnail" data-src="holder.js/40x40" alt="40x40" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 40px; height: 40px;">
-					</p>
-					<?php else: ?>
-						<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
-						<span class="registartion-border pull-right ">&nbsp;</span>
-						<p class="pull-right sign-in">Sign In</p>
-						<?php endif; ?>
+			<?php if (@$user_profile):?>
+				<a href="<?php echo site_url('map/insert_mark'); ?>"><button type="button" class="btn btn-sm btn-warning sign-up pull-right">ნახატის დამატება</button></a>
+				<p class="pull-right sign-in" ><img class="img-thumbnail" data-src="holder.js/30x30" alt="40x40" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 30px; height: 30px;"></p>
+				<?php else: ?>
+				<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
+				<span class="registartion-border pull-right ">&nbsp;</span>
+				<p class="pull-right sign-in" >Sign In</p>
+				<?php endif; ?>
 			</div>
 
 			<ul id="menu">
@@ -55,11 +52,11 @@
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-8">	<img src="<?php echo base_url('img/123.jpg'); ?>" class="img-responsive pull-left" alt="Image"></div>
+            <div class="col-md-8">	<img id="img" src="<?php echo base_url('assets/img/'); ?>" class="img-responsive pull-left" alt="Image"></div>
             <div class="col-md-4 description">
-							<button type="button" name="button" class="btn btn-success btn-sm pull-right">like</button>
+							<button type="button" id="button_like" name="button" class="btn btn-success btn-sm pull-right"></button>
 						<br><br>
-							<h4 class="pull-right">გიორგი ბერიძე</h4>
+							<h4 class="pull-right" id="myModalLabel"></h4>
 							<p class="pull-right">
 								<span class="glyphicon glyphicon-comment">27</span>
 								<span class="glyphicon glyphicon-eye-open">578</span>

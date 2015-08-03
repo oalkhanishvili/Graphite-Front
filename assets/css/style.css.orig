@@ -410,8 +410,9 @@ div.marker img:hover{
 }
 
 .header-logo img{
-	width: 27px;	
 
+	width: 27px;
+	margin: 2px;
 }
 
 .header-logo img.img-responsive pull-left {
@@ -611,10 +612,27 @@ canvas{
 	margin: 0px;
 }
 
+.modal-header{
+	padding: 8px;
+	border: none;
+}
 
+.modal-body{
+	margin: 0;
+	padding: 0px;
+}
+
+.modal-body img{
+	width: 300px;
 	margin:0 10px;
+
+}
 .modal-description{
 	display:inline-block;
+}
+
+.modal-content{
+	border-radius: 1px;
 }
 
 .modal.fade .modal-dialog {
