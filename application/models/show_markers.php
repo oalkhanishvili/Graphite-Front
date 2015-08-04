@@ -12,7 +12,7 @@ class show_markers extends CI_Model{
 	public function select_markers(){
 		$this->db->select('*');
 		$this->db->from('peaceofart');
-		$this->db->where('user_id',$_SESSION['fb_801390733309537_user_id']);
+		// $this->db->where('user_id', 11); 
 		$query = $this->db->get();
 
 		foreach ( $query->result_array() as $row ){
@@ -48,7 +48,7 @@ class show_markers extends CI_Model{
 	 */
 	public function select_user_wishlist(){
 		$this->db->select('*');
-		$this->db->where('like.user_id', $_SESSION['fb_801390733309537_user_id']);
+		// $this->db->where('like.user_id', $_SESSION['fb_801390733309537_user_id']);
 		$this->db->from('like');
 		$this->db->join('peaceofart', 'like.user_id=peaceofart.id');
 		$query = $this->db->get();
