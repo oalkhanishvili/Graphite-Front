@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2015 at 05:21 PM
+-- Generation Time: Aug 04, 2015 at 05:13 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -46,43 +46,28 @@ INSERT INTO `category` (`id`, `name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `like` (
 `id` int(10) NOT NULL,
-  `user_id` int(10) NOT NULL,
+  `user_id` text NOT NULL,
   `marker_id` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `like`
 --
 
 INSERT INTO `like` (`id`, `user_id`, `marker_id`) VALUES
-(1, 4, 0),
-(3, 4, 0),
-(4, 4, 0),
-(5, 4, 0),
-(6, 4, 0),
-(7, 4, 0),
-(8, 4, 0),
-(9, 4, 0),
-(10, 4, 0),
-(11, 4, 0),
-(12, 4, 0),
-(13, 11, 0),
-(14, 11, 0),
-(15, 11, 0),
-(16, 11, 0),
-(17, 11, 0),
-(18, 4, 0),
-(19, 4, 0),
-(20, 4, 0),
-(21, 4, 0),
-(22, 4, 0),
-(23, 4, 0),
-(24, 4, 0),
-(25, 4, 0),
-(26, 4, 0),
-(27, 4, 0),
-(28, 4, 0),
-(29, 4, 0);
+(1, '0', 11),
+(2, '0', 11),
+(3, '2147483647', 11),
+(4, '2147483647', 11),
+(5, '2147483647', 11),
+(6, '2147483647', 11),
+(7, '2147483647', 11),
+(8, '2147483647', 11),
+(9, '2147483647', 11),
+(10, '1441106692882834', 11),
+(11, '14411066928828342', 4),
+(12, '1441106692882834124', 4),
+(13, '1441106692882834', 4);
 
 -- --------------------------------------------------------
 
@@ -92,7 +77,7 @@ INSERT INTO `like` (`id`, `user_id`, `marker_id`) VALUES
 
 CREATE TABLE IF NOT EXISTS `peaceofart` (
 `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` text NOT NULL,
   `category_id` int(11) NOT NULL,
   `pic_name` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -108,8 +93,8 @@ CREATE TABLE IF NOT EXISTS `peaceofart` (
 --
 
 INSERT INTO `peaceofart` (`id`, `user_id`, `category_id`, `pic_name`, `title`, `description`, `like`, `longitude`, `latitude`, `create_date`) VALUES
-(4, 3, 2, '12.png', 'ჯემოლაბი', 'ქართლად გამომაქვს ტექსტი 1', 13, 44.782323, 41.718853, '2015-07-14 13:48:05'),
-(11, 2, 0, 'afd562c597df16854a8d8380041d25cc11.jpg', 'atasg', 'QTQWT', 0, 44.783363342285156, 41.70124284555466, '2015-07-24 12:17:49');
+(4, '1441106692882834', 2, '12.png', 'ჯემოლაბი', 'ქართლად გამომაქვს ტექსტი 1', 2, 44.782323, 41.718853, '2015-07-14 13:48:05'),
+(11, '1441106692882834', 0, 'afd562c597df16854a8d8380041d25cc11.jpg', 'atasg', 'QTQWT', 1, 44.783363342285156, 41.70124284555466, '2015-07-24 12:17:49');
 
 -- --------------------------------------------------------
 
@@ -200,7 +185,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `like`
 --
 ALTER TABLE `like`
-MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `peaceofart`
 --

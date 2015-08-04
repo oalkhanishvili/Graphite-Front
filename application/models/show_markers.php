@@ -50,7 +50,7 @@ class show_markers extends CI_Model{
 		$this->db->select('*');
 		$this->db->where('like.user_id', $_SESSION['fb_801390733309537_user_id']);
 		$this->db->from('like');
-		$this->db->join('peaceofart', 'like.marker_id=peaceofart.id');
+		$this->db->join('peaceofart', 'like.user_id=peaceofart.id');
 		$query = $this->db->get();
 		if ( $query->num_rows() > 0 ){
 			foreach ( $query->result_array() as $row ){

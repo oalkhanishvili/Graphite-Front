@@ -953,3 +953,6 @@ canvas{
 	vertical-align:top;
 	margin:20px auto;
 }
+.col-md-8 {
+	width:48%;
+}

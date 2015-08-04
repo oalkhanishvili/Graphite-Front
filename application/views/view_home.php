@@ -1,6 +1,10 @@
 <?php echo $map[ 'js']; ?>
 	<title>Document</title>
-<div id="fb-root"></div>
+
+	</head>
+
+	<body>
+	<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -8,9 +12,6 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=801390733309537";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-	</head>
-
-	<body>
 		<div class="container header-logo">
 			<div class="sidebar-right">
 				<?php if (@$user_profile):?>
@@ -62,9 +63,9 @@
 								<span class="glyphicon glyphicon-eye-open">578</span>
 
 							</p>
-							<p>
-								<div class="fb-comments" data-width="200" data-numposts="5"></div>
-							</p>
+							
+								<div class="fb-comments" data-width="200" data-href=""  data-numposts="5"></div>
+							
 			</div>
           </div>
 
