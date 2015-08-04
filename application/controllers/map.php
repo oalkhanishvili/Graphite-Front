@@ -105,9 +105,10 @@ class map extends CI_Controller{
 		redirect('map/insert_mark');
 		}
 		$config['zoom'] = '13';
-		$config['onclick'] = "placeMarker(event.latLng);$('#lat_id').val(event.latLng.lat()); $('#lng_id').val(event.latLng.lng());";
+			$config['onclick'] = "placeMarker(event.latLng);$('#lat_id').val(event.latLng.lat()); $('#lng_id').val(event.latLng.lng());";
 		$this->googlemaps->initialize($config);
 		$marker['position'] = '41.699833, 44.803448';
+
 
 		$data['map'] = $this->googlemaps->create_map();
 		$data['category'] = $this->show_markers->select_category();

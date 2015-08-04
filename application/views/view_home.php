@@ -74,7 +74,6 @@
 							<p>
 							<div class="fb-comments" data-numposts="4"></div>
 							</p>
-							
 
 
 						</div>
