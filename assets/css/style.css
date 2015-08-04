@@ -276,7 +276,7 @@ div.marker img:hover{
 
 
 .container-fluid{
-	padding: 0;
+	/* padding: 0; */
 	overflow-y:hidden;
 
 
@@ -942,3 +942,17 @@ canvas{
 	right:10px;
 	z-index: 999;
  }
+.modal-dialog {
+	width:80%;
+}
+.detail_image{
+	display:inline-block;
+}
+.detail_description{
+	display:inline-block;
+	vertical-align:top;
+	margin:20px auto;
+}
+.col-md-8 {
+	width:48%;
+}

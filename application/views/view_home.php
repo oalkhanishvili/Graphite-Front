@@ -1,16 +1,17 @@
 <?php echo $map[ 'js']; ?>
 	<title>Document</title>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=801390733309537";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+
 	</head>
 
 	<body>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=801390733309537";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 		<div class="container header-logo">
 			<div class="sidebar-right">
 				<?php if (@$user_profile):?>
@@ -54,19 +55,23 @@
           <div class="row">
             <div class="col-md-8">	<img id="img" src="<?php echo base_url('assets/img/'); ?>" class="img-responsive pull-left" alt="Image"></div>
             <div class="col-md-4 description">
-							<button type="button" id="button_like" name="button" class="btn btn-success btn-sm pull-right"></button>
+							<button type="button" id="button_like" name="button" class="btn btn-success"></button>
 						<br><br>
-							<h4 class="pull-right" id="myModalLabel"></h4>
-							<p class="pull-right">
+							<h4  id="myModalLabel"></h4>
+							<p >
 								<span class="glyphicon glyphicon-comment">27</span>
 								<span class="glyphicon glyphicon-eye-open">578</span>
+
 							</p>
-						</div>
+							
+								<div class="fb-comments" data-width="200" data-href=""  data-numposts="5"></div>
+							
+			</div>
           </div>
 
         </div>
       </div>
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
 				<div class="row">
 					<div class="col-sm-12">
 						<span class="glyphicon glyphicon-chevron-up"  data-toggle="tooltip" data-placement="left" title="Comments"></span>
@@ -79,7 +84,7 @@
 						</div>
 					</div>
 				</div>
-      </div>
+      </div> -->
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
