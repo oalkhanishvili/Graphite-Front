@@ -49,9 +49,10 @@ h4{
 }
 
 figure{
-  padding: 0 0 !important;
-  height: 90px;
-  margin-bottom: 80px;
+    background: url(../../img/img-bg.png) no-repeat;
+    background-size: 298px 335px;
+    padding: 15px;
+    margin-left: 45px;
 
 
 }
@@ -71,10 +72,7 @@ figure:last-child{
 }
 
 
-figure img{
-	cursor: pointer;
-	  box-shadow: 0px 1px 8px rgba(0,0,0,0.3);
-}
+
 
 figcaption{
 	width: 190px;
@@ -572,7 +570,9 @@ canvas{
 	left:-395px;
 	width: 395px;
 	height: 100%;
-	background: #F1EFE9;
+	background: url(../../img/sidebar-bg.jpg) no-repeat;
+	background-position: 0 33px;
+	background-size: 100% 100%;
 	-webkit-transition: all .8s;
 	        transition: all .8s;
 	/*border-right: 1px solid #FF513F;*/
@@ -601,10 +601,13 @@ canvas{
 }
 
 .sidebar img{
-	float: left;
-	width: 170px;
-	height: 120px;
-	margin-right: 7px;	}
+    float: left;
+    width: 249px;
+    height: 222px;
+    margin-bottom: 75px;
+    padding-left: 9px;
+    cursor: pointer;
+}
 
 .marker{
 

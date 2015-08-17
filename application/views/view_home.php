@@ -134,38 +134,13 @@
 									<?php foreach ( $result as $item ):?>
 										<figure class=" col-md-12 team pull-left">
 											<img src="<?php echo base_url('assets/img/'.$item['pic_name']); ?>" class="img-responsive" alt="">
-											<figcaption class="caption">
-												<a href="" class="cap-link">
-													<h4></i><?php echo $item['title']; ?></h4>
-													<!-- <a href='#' data-id='<?php echo $item['id'];?>' class='marker_id'>fsaf</a> -->
-												</a>
-												<p>saburtalo, კოსტავას #24</p>
-												<div class='comment-icons'>
-													<i class="fa fa-comment">15</i>
-													<i class="fa fa-eye">123</i>
-												</div>
-
-												<div><i class="fa fa-thumbs-o-up"></i>
-												</div>
-											</figcaption>
 										</figure>
 										<?php endforeach; ?>
 								</div>
 								<div id="i_like_it" class="tab-pane fade">
 									<?php foreach ( $wishlist as $like ):?>
 										<figure class=" col-md-12 team pull-left">
-											<img src="<?php echo base_url('assets/img/'.$like['pic_name']); ?>" class="img-responsive" alt="">
-											<figcaption class="caption">
-												<a href="" class="cap-link">
-													<h4></i><?php echo $like['title']; ?></h4>
-												</a>
-												<p>saburtalo, კოსტავას #24</p>
-												<div class='comment-icons'>
-													<i class="fa fa-comment">15</i>
-													<i class="fa fa-eye">123</i>
-												</div>
-												<i class="fa fa-thumbs-up"></i>
-											</figcaption>
+											<img src="<?php echo base_url('assets/img/'.$like['pic_name']); ?>" class="img-responsive" alt="">	
 										</figure>
 										<?php endforeach; ?>
 								</div>
