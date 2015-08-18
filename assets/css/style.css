@@ -1,4 +1,14 @@
 
+@font-face {
+    font-family: 'studio';
+    src: url('../fonts/bpg_le_studio_02_caps.eot');
+    src: url('../fonts/bpg_le_studio_02_caps.eot') format('embedded-opentype'),
+         url('../fonts/bpg_le_studio_02_caps.woff2') format('woff2'),
+         url('../fonts/bpg_le_studio_02_caps.woff') format('woff'),
+         url('../fonts/bpg_le_studio_02_caps.ttf') format('truetype');
+}
+
+
 body {
       overflow: hidden;
  }
@@ -402,11 +412,11 @@ div.marker img:hover{
 }
 
 .header-logo{
-	position: fixed;
-	z-index: 11111;
-	width: 100%;
-	background: rgba(0,0,0,0.3);
-	height: 42px;
+    position: fixed;
+    z-index: 11111;
+    width: 100%;
+    background: rgb(101, 101, 101);
+    height: 62px;
 
 
 }
@@ -438,7 +448,7 @@ div.marker img:hover{
 }
 
 .registration{
-	margin: 4px;
+	margin: 15px;
 	-webkit-transition: all .8s;
 	        transition: all .8s;
 	width: 300px;
@@ -517,7 +527,7 @@ div.marker img:hover{
 }
 
 .fa-bars{
-	color: #000;
+	color: #656565;
 	position: fixed;
 	z-index: 111;
 	left:-7px;
@@ -782,10 +792,8 @@ canvas{
 }
 #menu li {
     display: inline-block;
-    margin: 6px;
-    color: #000;
-    background: none;
-    background: none;
+    margin: 0px;
+    color: #fff;
     border-radius: 0;
     -webkit-transition:all 0.5s;
             transition:all 0.5s;
@@ -795,14 +803,22 @@ canvas{
 	color: #fff;
 }
 #menu li a{
-	text-decoration:none;
-	color: #F5A72E;
+    padding: 0 20px;
+    height: 62px;
+    line-height: 64px;
+    display: block;
+    font-size: 12px;
+    font-family: studio;
+    color:#fff;
+    text-decoration: none;
+
 }
 #menu li.active a:hover{
 	color: #000;
 }
-#menu li:hover{
-	background: rgba(255,255,255, 0.8);
+#menu li a:hover{
+	background: rgba(0,0,0, 0.18);
+	transition:all 0.5;
 }
 #menu li a,
 #menu li.active a{

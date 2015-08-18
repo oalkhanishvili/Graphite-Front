@@ -41,6 +41,11 @@
 				</li>
 				<li data-menuanchor="secondPage"><a href="#secondPage" title="first page"><i class="fa fa-angle-down fa-2x"></i></a>
 				</li>
+				<li><a href="#firstPage" title="map">მთავარი</a></li>
+				<li><a href="#firstPage" title="map">ჩვენ</a></li>
+				<li><a href="#firstPage" title="map">რუქა</a></li>
+				<li><a href="#firstPage" title="map">დამატება</a></li>
+			
 			</ul>
 		</div>
 		<div id="gridSystemModal" class="modal fade"  role="dialog" aria-labelledby="gridModalLabel">
@@ -55,10 +60,10 @@
           <div class="row">
             <div class="col-md-8">	<img id="img" src="<?php echo base_url('assets/img/'); ?>" class="img-responsive pull-left" alt="Image"></div>
             <div class="col-md-4 description">
-							<button type="button" id="button_like" name="button" class="btn btn-success"></button>
-						<br><br>
+							<img src="../../img/spray.png" height="247"  width="154px" alt="">
+						
 							<h4  id="myModalLabel"></h4>
-							<p >
+							<p>
 								<span class="glyphicon glyphicon-comment">27</span>
 								<span class="glyphicon glyphicon-eye-open">578</span>
 
@@ -91,23 +96,14 @@
 		<div id="fullpage">
 			<div class="section" id="section0">
 				<div class="slide" id="slide1">
-					<div class="content">
-						<h1>Normal scrolling</h1>
-						<p>With a linked menu</p>
-					</div>
+					
 				</div>
 
 				<div class="slide" id="slide2">
-					<div class="content">
-						<h1>Normal scrolling</h1>
-						<p>With a linked menu</p>
-					</div>
+					
 				</div>
 				<div class="slide" id="slide2">
-					<div class="content">
-						<h1>Normal scrolling</h1>
-						<p>With a linked menu</p>
-					</div>
+					
 				</div>
 			</div>
 			<div class="section" id="section1">
