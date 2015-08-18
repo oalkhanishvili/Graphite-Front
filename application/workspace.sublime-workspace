@@ -240,53 +240,26 @@
 	"buffers":
 	[
 		{
-			"file": "config/config.php",
-			"settings":
-			{
-				"buffer_size": 17508,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\ndefined('BASEPATH') OR exit('No direct script access allowed');\n\nclass map extends CI_Controller{\n	public function __construct(){\n		parent::__construct();\n		$this->load->library('googlemaps');\n\n		$config['center'] = '41.699833, 44.803448';\n		$config['zoom'] = 'auto';\n		$config['zoom'] = 'auto';\n		$config['disableMapTypeControl'] = TRUE;\n		$this->googlemaps->initialize($config);\n\n	}\n	public function index(){\n\n		$this->load->model('show_markers');\n		$list = $this->show_markers->select_markers();\n\n		foreach ( $list as $items ){\n			$marker = array();\n			$marker['position'] = $items['latitude'].','.$items['longitude'];\n			$html  = \"<div class='marker'><h2>{$items['title']}</h1>\";\n			$html .= \"<p><img src=\".base_url('img/'.$items['pic_name']).\" height=150px></p>\";\n			$html .= \"<p>{$items['description']}</p></div>\";\n			$html .= \"<p><a href=\".site_url('map/detail_page/'.$items['id']).\">დეტალური გვერდი</a></p></div>\";\n			$marker['infowindow_content'] = $html;\n			if ( $items['category_id'] == 2 ){\n			$marker['icon'] = base_url('img/marker.png');\n			}\n			$marker['animation'] = 'DROP';\n			$marker['draggable'] = FALSE;\n			$this->googlemaps->add_marker($marker);\n		}\n\n		$data['map'] = $this->googlemaps->create_map();\n\n		$this->load->view('view_home', $data);\n\n	}\n	public function detail_page($id){\n		$this->load->model('show_markers');\n		$result = $this->show_markers->detail_page($id);\n\n		$data['detail_page'] = $result;\n		$data['map'] = $this->googlemaps->create_map();\n		$this->load->view('detail_page', $data);\n	}\n	public function insert_mark(){\n\n		if ( $_SERVER['REQUEST_METHOD'] == 'POST' ){\n		$data = array(\n			'user_id' => $this->input->post('user_id'),\n			'category_id' => $this->input->post('category_id'),\n			'pic_name' => $this->input->post('pic_name'),\n			'title' => $this->input->post('title'),\n			'longitude' => $this->input->post('longitude'),\n			'latitude' => $this->input->post('latitude'),\n			);\n		$this->load->model('show_markers');\n		$this->show_markers->insert_markers($data);\n		}\n		$data['map'] = $this->googlemaps->create_map();\n		$this->load->view('insert_marker', $data);\n	}\n}",
 			"file": "controllers/map.php",
-			"file_size": 2178,
-			"file_write_time": 130814421720983253,
 			"settings":
 			{
-				"buffer_size": 2113,
+				"buffer_size": 4948,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/detail_page.php",
-			"settings":
-			{
-				"buffer_size": 478,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "libraries/Googlemaps.php",
-			"settings":
-			{
-				"buffer_size": 90372,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "models/show_markers.php",
 			"settings":
 			{
-				"buffer_size": 674,
+				"buffer_size": 3291,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "config/autoload.php",
+			"file": "/D/xampp/htdocs/test/index.php",
 			"settings":
 			{
-				"buffer_size": 3788,
+				"buffer_size": 884,
 				"line_ending": "Windows"
 			}
 		},
@@ -294,7 +267,47 @@
 			"file": "views/view_home.php",
 			"settings":
 			{
-				"buffer_size": 294,
+				"buffer_size": 6718,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/footer.php",
+			"settings":
+			{
+				"buffer_size": 2765,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/insert_marker.php",
+			"settings":
+			{
+				"buffer_size": 1329,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/xampp/htdocs/amanatebi/images/logo.svg",
+			"settings":
+			{
+				"buffer_size": 1506,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/login.php",
+			"settings":
+			{
+				"buffer_size": 4248,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "libraries/Googlemaps.php",
+			"settings":
+			{
+				"buffer_size": 90644,
 				"line_ending": "Windows"
 			}
 		}
@@ -306,7 +319,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 196.0,
+		"height": 296.0,
 		"last_filter": "install",
 		"selected_items":
 		[
@@ -351,7 +364,7 @@
 				"Set Syntax: PHP"
 			]
 		],
-		"width": 528.0
+		"width": 536.0
 	},
 	"console":
 	{
@@ -375,12 +388,48 @@
 		"/D/xampp/htdocs/Graphite-Front/application",
 		"/D/xampp/htdocs/Graphite-Front/application/config",
 		"/D/xampp/htdocs/Graphite-Front/application/controllers",
-		"/D/xampp/htdocs/Graphite-Front/application/libraries",
 		"/D/xampp/htdocs/Graphite-Front/application/models",
 		"/D/xampp/htdocs/Graphite-Front/application/views"
 	],
 	"file_history":
 	[
+		"/D/xampp/htdocs/Graphite-Front/application/views/header.php",
+		"/D/xampp/htdocs/Graphite-Front/assets/css/style.css",
+		"/D/xampp/htdocs/amanatebi/images/logo.svg",
+		"/D/xampp/htdocs/Graphite-Front/application/views/test.php",
+		"/D/xampp/htdocs/amanatebi/js/my_script.js",
+		"/D/xampp/htdocs/Graphite-Front/application/views/insert_marker.php",
+		"/D/xampp/htdocs/Graphite-Front/application/libraries/facebook.php",
+		"/D/xampp/htdocs/Graphite-Front/application/controllers/Welcome.php",
+		"/D/xampp/htdocs/test/tbcpay/tbcpay.lib.php",
+		"/D/xampp/htdocs/test/tbcpay/start.php",
+		"/D/xampp/htdocs/test/tbcpay/ok.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/fail.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/start.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/tbcpay.lib.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/ok.php",
+		"/D/xampp/htdocs/test/tbcpay-php-master/cert/.htaccess",
+		"/D/xampp/htdocs/test/cs.bc.ecomm_merchant-1.1.15-java1.6-(MH1+ALL_t6j16_web)/examples/testecomm_ok.html",
+		"/D/xampp/htdocs/test/cs.bc.ecomm_merchant-1.1.15-java1.6-(MH1+ALL_t6j16_web)/examples/shop_sendorder.php",
+		"/D/xampp/htdocs/test/cs.bc.ecomm_merchant-1.1.15-java1.6-(MH1+ALL_t6j16_web)/examples/cardinfo.html",
+		"/D/xampp/htdocs/Graphite-Front/application/config/facebook.php",
+		"/D/xampp/htdocs/Graphite-Front/Facebook-PHP-CodeIgniter-master/views/login.php",
+		"/D/xampp/htdocs/Graphite-Front/.htaccess",
+		"/D/xampp/htdocs/Graphite-Front/application/libraries/Googlemaps.php",
+		"/D/xampp/htdocs/Graphite-Front/application/libraries/Jsmin.php",
+		"/D/xampp/htdocs/Graphite-Front/application/.htaccess",
+		"/D/xampp/htdocs/amanatebi/.htaccess",
+		"/D/xampp/htdocs/Graphite-Front/application/config/autoload.php",
+		"/D/xampp/htdocs/code/application/.htaccess",
+		"/D/xampp/htdocs/code/.htaccess",
+		"/D/xampp/htdocs/Graphite-Front/application/config/config.php",
+		"/D/xampp/htdocs/amanatebi/application/.htaccess",
+		"/D/xampp/htdocs/Graphite-Front/application/views/detail_page.php",
+		"/D/xampp/htdocs/Graphite-Front/application/views/view_home.php",
+		"/D/xampp/htdocs/Graphite-Front/application/config/routes.php",
+		"/D/xampp/htdocs/Graphite-Front/application/controllers/map.php",
+		"/C/Users/dalkh_000/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/dalkh_000/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/D/xampp/htdocs/code/application/views/single_news.php",
 		"/D/xampp/htdocs/peaceofart/application/.htaccess",
 		"/D/xampp/htdocs/amanatebi/application/third_party/index.html",
@@ -403,7 +452,6 @@
 		"/D/xampp/htdocs/amanatebi/application/views/pages/reisebi.php",
 		"/D/xampp/htdocs/amanatebi/application/models/page_model.php",
 		"/D/xampp/htdocs/amanatebi/application/views/pages/section.php",
-		"/D/xampp/htdocs/amanatebi/js/my_script.js",
 		"/D/xampp/htdocs/amanatebi/random-login-form/index.html",
 		"/D/xampp/htdocs/amanatebi/login/index.html",
 		"/D/xampp/htdocs/amanatebi/application/views/manager/login-form.php",
@@ -426,9 +474,7 @@
 		"/D/xampp/htdocs/amanatebi/application/config/config.php",
 		"/D/xampp/htdocs/amanatebi/application/config/routes.php",
 		"/D/xampp/htdocs/amanatebi/application/controllers/News.php",
-		"/D/xampp/htdocs/amanatebi/.htaccess",
 		"/D/xampp/htdocs/amanatebi/index.php",
-		"/D/xampp/htdocs/amanatebi/application/.htaccess",
 		"/D/xampp/htdocs/amanatebi/application/index.html",
 		"/D/xampp/htdocs/amanatebi/images/yuan.svg",
 		"/D/xampp/htdocs/amanatebi/images/lari.svg",
@@ -437,7 +483,6 @@
 		"/D/xampp/htdocs/amanatebi/application/config/constants.php",
 		"/D/xampp/htdocs/amanatebi/application/models/page_model",
 		"/D/xampp/htdocs/geolab/layout/head.php",
-		"/D/xampp/htdocs/code/.htaccess",
 		"/D/xampp/htdocs/amanatebi/application/controllers/User.php",
 		"/D/xampp/htdocs/code/application/views/search_result.php",
 		"/D/xampp/htdocs/code/application/config/autoload.php",
@@ -475,44 +520,11 @@
 		"/D/xampp/htdocs/code/application/views/application.php",
 		"/D/xampp/htdocs/code/application/controllers/application.php",
 		"/D/xampp/htdocs/geolab/html/index.html",
-		"/D/xampp/htdocs/geolab/layout/header.php",
-		"/D/xampp/htdocs/geolab/html/new_cal/index.html",
-		"/D/xampp/htdocs/geolab/js/myscript.js",
-		"/D/xampp/htdocs/geolab/calendar/index.html",
-		"/D/xampp/htdocs/code/application/models/User_mode.php",
-		"/D/xampp/htdocs/geolab/layout/footer.php",
-		"/D/xampp/htdocs/saswavlo/dbh.php",
-		"/D/xampp/htdocs/geolab/admin/inc/dbh.php",
-		"/D/xampp/htdocs/geolab/admin/addoncal.php",
-		"/D/xampp/htdocs/geolab/admin/inc/calinsert.php",
-		"/D/xampp/htdocs/geolab/functions/calendar_date.php",
-		"/D/xampp/htdocs/saswavlo/option.class.php",
-		"/D/xampp/htdocs/saswavlo/index2.php",
-		"/D/xampp/htdocs/saswavlo/select2.php",
-		"/D/xampp/htdocs/saswavlo/question.class.php",
-		"/D/xampp/htdocs/track1/classes/class.php",
-		"/D/xampp/htdocs/track/templates/default/default.php",
-		"/D/xampp/htdocs/track/templates/default/shortstory.tpl",
-		"/D/xampp/htdocs/geolab/layout/style/style.css",
-		"/D/xampp/htdocs/geolab/include/dbh.php",
-		"/D/xampp/htdocs/geolab/index2.php",
-		"/D/xampp/htdocs/track1/db/dbh.php",
-		"/D/xampp/htdocs/geolab/index.php",
-		"/D/xampp/htdocs/track/include/classes/Accounts.class.php",
-		"/D/xampp/htdocs/track/page/handlers/handler_pages.php",
-		"/D/xampp/htdocs/test/includes/functions.php",
-		"/D/xampp/track/db/dbh.php",
-		"/D/xampp/htdocs/test/includes/classes.php",
-		"/D/xampp/htdocs/test/public/index.php",
-		"/D/xampp/htdocs/saswavlo/select.php",
-		"/D/xampp/htdocs/saswavlo/kodebi/PDOfetch.php",
-		"/D/xampp/htdocs/test/public/registration.php",
-		"/D/xampp/htdocs/test/public/stylesheets/style.css",
-		"/D/xampp/htdocs/saswavlo/option.php"
+		"/D/xampp/htdocs/geolab/layout/header.php"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 50.0
 	},
 	"find_in_files":
 	{
@@ -527,6 +539,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"myModalLabel",
+			"<<<",
+			"img",
+			"data-class=\"modal\"",
+			"detail_page",
+			"myModalLabel",
+			"modal-content",
+			"parse_result",
+			"trans_id",
+			"dir",
+			"დირ",
+			"getLoginUrl",
+			"header-logo img",
+			"onclick",
+			"placemarker",
+			"pp",
+			"createMarker",
+			"createMarker_map",
+			"createMarker_",
+			"createMarker_map",
+			"position",
+			"createMarker_map",
+			"session",
 			"sensor",
 			"lues']['2']['A'",
 			"side-nav",
@@ -650,63 +685,30 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "config/config.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								663,
-								663
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"function_name_status_row": 19,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "controllers/map.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2113,
+						"buffer_size": 4948,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2113,
-								2113
+								4890,
+								4890
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"function_name_status_row": -1,
+							"function_name_status_row": 127,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -717,36 +719,71 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "views/detail_page.php",
+					"buffer": 1,
+					"file": "models/show_markers.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 478,
+						"buffer_size": 3291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								447,
-								447
+								1458,
+								1458
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"auto_name": "",
-							"function_name_status_row": 14,
+							"function_name_status_row": 52,
 							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/xampp/htdocs/test/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								825,
+								825
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 24,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 288.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -754,24 +791,59 @@
 				},
 				{
 					"buffer": 3,
-					"file": "libraries/Googlemaps.php",
+					"file": "views/view_home.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 90372,
+						"buffer_size": 6718,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22056,
-								22056
+								3255,
+								3255
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 237,
+							"auto_complete": false,
+							"function_name_status_row": 66,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 206.0,
+						"translation.y": 1296.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/footer.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2765,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2756,
+								2756
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 70,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -779,33 +851,32 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "models/show_markers.php",
-					"semi_transient": false,
+					"buffer": 5,
+					"file": "views/insert_marker.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 674,
+						"buffer_size": 1329,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								588,
-								588
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"function_name_status_row": 23,
+							"function_name_status_row": 0,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
@@ -813,40 +884,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "config/autoload.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3788,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2374,
-								2374
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"function_name_status_row": 83,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2462.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
@@ -854,35 +892,104 @@
 				},
 				{
 					"buffer": 6,
-					"file": "views/view_home.php",
+					"file": "/D/xampp/htdocs/amanatebi/images/logo.svg",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 294,
+						"buffer_size": 1506,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								286,
-								220
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 11,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "views/login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4248,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1144,
+								1144
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"function_name_status_row": 9,
+							"function_name_status_row": 41,
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1018.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "libraries/Googlemaps.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"function_name_status_row": 1949,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 54669.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -890,7 +997,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -931,7 +1038,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 52.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -973,7 +1080,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 188.0,
+	"side_bar_width": 225.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

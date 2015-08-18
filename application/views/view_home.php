@@ -1,92 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/javascript.fullPage.css'); ?>" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/style.css'); ?>">
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/fonts.css'); ?>">
-		<?php echo $map['js']; ?>
-		<title>Document</title>
+<?php echo $map[ 'js']; ?>
+	<title>Document</title>
+
 	</head>
+
 	<body>
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=801390733309537";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 		<div class="container header-logo">
 			<div class="sidebar-right">
-				<form action="" method="" role="form">
-					<legend class="pull-right"><i class='fa fa-close fa-md pull-right sign-close'></i></legend>									
-					<div class="form-group sign-in-inputs">
-						<label for=""></label>
-						<input type="text" class="form-control" id="" placeholder="Username">
-						<label for=""></label>
-						<input type="text" class="form-control" id="" placeholder="Password">
-					</div>
-					<button id="submitaction" class="btn btn-sm btn-warning click-load" data-loading-text="&nbsp;&nbsp;&nbsp;&nbsp;<i class='fa fa-cog fa-spin'></i>&nbsp;&nbsp;&nbsp;&nbsp;" type="">Sign in</button>
-					
-				</form>
+				<?php if (@$user_profile):?>
+					<img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 140px; height: 140px;">
+					<h2><?=$user_profile['name']?></h2>
+					<a href="<?= $logout_url ?>" class="btn btn-lg btn-primary btn-block" role="button">Logout</a>
+					<?php else: ?>
+						<h2 class="form-signin-heading">Login with Facebook</h2>
+						<a href="<?= $login_url ?>" class="btn btn-lg btn-primary btn-block" role="button">Login</a>
+						<?php endif; ?>
 			</div>
-			<img src="<?php echo base_url('img/marker11.png'); ?>"  class="img-responsive pull-left" alt="Image">
-
-			<div class="pull-right registration">				
+			<img src="<?php echo base_url('img/icons/logo.png'); ?>" class="img-responsive pull-left" alt="Image">
+			<div class="pull-right registration">
+			<?php if (@$user_profile):?>
+				<a href="<?php echo site_url('map/insert_mark'); ?>"><button type="button" class="btn btn-sm btn-warning sign-up pull-right">ნახატის დამატება</button></a>
+				<p class="pull-right sign-in" ><img class="img-thumbnail" data-src="holder.js/30x30" alt="40x40" src="https://graph.facebook.com/<?=$user_profile['id']?>/picture?type=large" style="width: 30px; height: 30px;"></p>
+				<?php else: ?>
 				<button type="button" class="btn btn-sm btn-warning sign-up pull-right">Sign Up</button>
 				<span class="registartion-border pull-right ">&nbsp;</span>
 				<p class="pull-right sign-in" >Sign In</p>
+				<?php endif; ?>
 			</div>
 
-		</div>
-		<div id="fullpage">	
-			
+			<ul id="menu">
 
+				<li data-menuanchor="firstPage"><a href="#firstPage" title="map"><i class="fa fa-angle-up fa-2x"></i></a>
+				</li>
+				<li data-menuanchor="secondPage"><a href="#secondPage" title="first page"><i class="fa fa-angle-down fa-2x"></i></a>
+				</li>
+				<li><a href="#firstPage" title="map">მთავარი</a></li>
+				<li><a href="#firstPage" title="map">ჩვენ</a></li>
+				<li><a href="#firstPage" title="map">რუქა</a></li>
+				<li><a href="#firstPage" title="map">დამატება</a></li>
+			
+			</ul>
+		</div>
+		<div id="gridSystemModal" class="modal fade"  role="dialog" aria-labelledby="gridModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">	<img id="img" src="<?php echo base_url('assets/img/'); ?>" class="img-responsive pull-left" alt="Image"></div>
+            <div class="col-md-4 description">
+							<img src="../../img/spray.png" height="247"  width="154px" alt="">
+						
+							<h4  id="myModalLabel"></h4>
+							<p>
+								<span class="glyphicon glyphicon-comment">27</span>
+								<span class="glyphicon glyphicon-eye-open">578</span>
+
+							</p>
+							
+								<div class="fb-comments" data-width="200" data-href=""  data-numposts="5"></div>
+							
+			</div>
+          </div>
+
+        </div>
+      </div>
+      <!-- <div class="modal-footer">
+				<div class="row">
+					<div class="col-sm-12">
+						<span class="glyphicon glyphicon-chevron-up"  data-toggle="tooltip" data-placement="left" title="Comments"></span>
+						<div class="comments">
+							<p>
+							<div class="fb-comments" data-numposts="4"></div>
+							</p>
+
+
+						</div>
+					</div>
+				</div>
+      </div> -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+		<div id="fullpage">
 			<div class="section" id="section0">
 				<div class="slide" id="slide1">
-					<div class="content">
-						<img src="<?php echo base_url('assets/img/img.jpg'); ?>" alt="">
-					</div>
+					
+				</div>
+
+				<div class="slide" id="slide2">
+					
 				</div>
 				<div class="slide" id="slide2">
-					<div class="content">
-						<img src="<?php echo base_url('assets/img/img1.jpg'); ?>" alt="">
-					</div>
-				</div>
-				<div class="slide" id="slide2">
-					<div class="content">
-						<img src="<?php echo base_url('assets/img/img3.jpg'); ?>" alt="">
-					</div>
+					
 				</div>
 			</div>
 			<div class="section" id="section1">
 				<div class="content">
 					<div class="map_container">
-						<i class="fa fa-bars fa-2x"></i>
-						<div class="mapp">						
-							<?php echo $map['html']; ?>
+						<?php if (@$user_profile):?>
+							<i class="fa fa-bars fa-2x"></i>
+							<?php endif; ?>
+								<div class="mapp">
+									<?php echo $map[ 'html']; ?>
+								</div>
+					</div>
+					<div class="sidebar default-skin demo" id="vertical-horizontal-scrollbar-demo">
+						<div class="dinamic-tabs">
+							<ul class="nav nav-tabs">
+								<li class="active"><a data-toggle="tab" href="#my_graphs">My graphs</a>
+								</li>
+								<li><a data-toggle="tab" href="#i_like_it">I like it</a>
+								</li>
+								<div id="nav-marker"></div>
+							</ul>
+							<div class="tab-content">
+								<div id="my_graphs" class="tab-pane fade in active">
+									<?php foreach ( $result as $item ):?>
+										<figure class=" col-md-12 team pull-left">
+											<img src="<?php echo base_url('assets/img/'.$item['pic_name']); ?>" class="img-responsive" alt="">
+										</figure>
+										<?php endforeach; ?>
+								</div>
+								<div id="i_like_it" class="tab-pane fade">
+									<?php foreach ( $wishlist as $like ):?>
+										<figure class=" col-md-12 team pull-left">
+											<img src="<?php echo base_url('assets/img/'.$like['pic_name']); ?>" class="img-responsive" alt="">	
+										</figure>
+										<?php endforeach; ?>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="sidebar">
-							
-						</div>
-					
 				</div>
-
 			</div>
-
-			
 		</div>
-		
-	</body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url('assets/js/javascript.fullPage.min.js'); ?>"></script>
-	<script type="text/javascript">
-		fullpage.initialize('#fullpage', {
-		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-		menu: '#menu',
-		css3:true
-	});
-	</script>
-
-
-	<script src="<?php echo base_url('assets/js/script.js'); ?>"></script>
-
-</html>

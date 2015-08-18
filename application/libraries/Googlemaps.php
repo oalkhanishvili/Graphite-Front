@@ -84,7 +84,7 @@ class Googlemaps {
 	var	$panoramioUser				= '';						// Restrict the set of Panoramio photos shown to those matching a particular user
 	var $region						= '';						// Country code top-level domain (eg "uk") within which to search. Useful if supplying addresses rather than lat/longs
 	var $scaleControlPosition		= '';						// The position of the Scale control, eg. 'BOTTOM_RIGHT'
-	var $scrollwheel				= FALSE;						// If set to FALSE will disable zooming by scrolling of the mouse wheel
+	var $scrollwheel				= TRUE;						// If set to FALSE will disable zooming by scrolling of the mouse wheel
 	var $sensor						= FALSE;					// Set to TRUE if being used on a device that can detect a users location
 	var $streetViewAddressControl	= TRUE;						// If set to FALSE will hide the Address control
 	var $streetViewAddressPosition	= '';						// The position of the Address control, eg. 'BOTTOM'
@@ -1999,6 +1999,22 @@ class Googlemaps {
 			markers_'.$this->map_name.'.push(marker);
 			lat_longs_'.$this->map_name.'.push(marker.getPosition());
 			return marker;
+		}
+		';
+		//
+		// add markers
+		$this->output_js_contents .= '
+		var pp;
+
+		function placeMarker(location) {
+		  if ( pp ) {
+		    pp.setPosition(location);
+		  } else {
+		    pp = new google.maps.Marker({
+		      position: location,
+		      map: map
+		    });
+		  }
 		}
 		';
 		//
